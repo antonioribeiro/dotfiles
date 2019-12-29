@@ -26,7 +26,7 @@ function install
 
     install_yarn_prefs
 
-    install_ohmyzsh_themes ### looks line this one is not working anymore
+    # install_ohmyzsh_themes ### looks line this one is not working anymore
 
     install_powerline_fonts ### looks like the current fix for oh my zsh fonts
     
