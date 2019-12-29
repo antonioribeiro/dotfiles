@@ -67,6 +67,8 @@ function install_ohmyzsh()
     check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     echo_done
+
+    install_zsh_prefs
 }
 
 
@@ -96,8 +98,6 @@ function install_global_gitignore()
 
 function install_zsh_prefs() 
 {
-    [ "$_INSTALL_ZSH_PREFS" != "YES" ] && return 0
-
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     delete_if_exists $HOME/.zshrc
@@ -200,7 +200,7 @@ function install_ohmyzsh_themes()
 
 function install_powerline_fonts() 
 {
-    [ "$_INSTALL_OHMYZSH_THEMES" != "YES" ] && return 0
+    [ "$_INSTALL_POWERLINE_FONTS" != "YES" ] && return 0
 
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 

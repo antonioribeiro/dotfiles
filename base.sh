@@ -20,8 +20,6 @@ function install
 
     install_global_gitignore
 
-    install_zsh_prefs
-
     install_vim_prefs
 
     install_yarn_prefs
