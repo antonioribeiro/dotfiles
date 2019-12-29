@@ -6,8 +6,6 @@ function execute()
 
     clear_output_files
 
-    fix_file_permissions
-
     _COMMAND=$@
 
     echo_comment "> $_COMMAND"             
@@ -129,6 +127,17 @@ function echo_comment()
 {
     tput bold
     tput setaf 3
+
+    echo $1
+
+    tput sgr0
+}
+
+
+function echo_warning() 
+{
+    tput bold
+    tput setaf 5
 
     echo $1
 
@@ -318,6 +327,8 @@ function composer_install()
     then
         echo_success "Package $_PACKAGE is already installed."
 
+        echo
+
         return 0
     fi
 
@@ -364,6 +375,8 @@ function npm_install()
     then
         echo_success "Package $_PACKAGE is already installed."
 
+        echo
+
         return 0
     fi
 
@@ -373,6 +386,8 @@ function npm_install()
 
 function fix_file_permissions() 
 {
+    echo_comment "We now need to use sudo to fix some file permissions, please provide your password:"
+
     sudo chown -R $___USERNAME___:$___USERGROUP___ $HOME/.config
 }
 
@@ -416,4 +431,8 @@ function load_installable_packages()
     [ "$FATAL_ERROR" = "YES" ] && return 0
     
     load_file_to_array .brew_packages.defaults .brew_packages _BREW_PACKAGES_TO_INSTALL
+
+    [ "$FATAL_ERROR" = "YES" ] && return 0
+    
+    load_file_to_array .npm_packages.defaults .npm_packages _NPM_PACKAGES_TO_INSTALL
 }

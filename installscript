@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# -- Overries
+# -- Overrides
 # You can create files to override the following configuration files:
-
+#
+# config.defaults.sh = config.sh
 # .brew_packages.defaults = .brew_packages
 # .composer_packages.defaults = .composer_packages 
-# config.defaults.sh = config.sh
+# .npm_packages.defaults = .npm_packages 
+# ---
 
 function install
 {
@@ -97,9 +99,13 @@ function install
 
     # install_prettier
 
-    install_composer_packages
+    # install_composer_packages
 
-    install_brew_packages
+    # install_brew_packages
+
+    install_npm_packages
+
+    fix_file_permissions
 
     # display_instructions    
 }

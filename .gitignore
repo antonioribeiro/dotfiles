@@ -3,3 +3,4 @@ shell/.yarnrc
 config.sh
 .composer_packages
 .bew_packages
+.npm_packages

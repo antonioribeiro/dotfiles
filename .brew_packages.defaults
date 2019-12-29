@@ -17,3 +17,5 @@ autoconf
 yarn
 ghostscript
 zsh-autosuggestions
+awscli
+python3

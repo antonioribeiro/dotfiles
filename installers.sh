@@ -459,16 +459,6 @@ function configure_macos()
 }
 
 
-function install_prettier() 
-{
-    [ "$_INSTALL_PRETTIER" != "YES" ] && return 0
-
-    npm_install prettier
-
-    npm_install @prettier/plugin-php
-}
-
-
 function configure_git() 
 {
     [ "$_FATAL_ERROR" = "YES" ] && return 0
@@ -488,7 +478,7 @@ function install_composer_packages()
 
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
-    echo_info "Installing all Composer packages..."
+    echo_warning "Installing all Composer packages..."
 
     for _PACKAGE in "${_COMPOSER_PACKAGES_TO_INSTALL[@]}"
     do
@@ -504,7 +494,7 @@ function install_brew_packages()
 
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
-    echo_info "Installing all Homebrew packages..."
+    echo_warning "Installing all Homebrew packages..."
 
     for _PACKAGE in "${_BREW_PACKAGES_TO_INSTALL[@]}"
     do
@@ -513,3 +503,20 @@ function install_brew_packages()
         [ "$_FATAL_ERROR" = "YES" ] && return 0
     done
 }
+
+function install_npm_packages() 
+{
+    [ "$_INSTALL_NPM_PACKAGES" != "YES" ] && return 0
+
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    echo_warning "Installing all NPM packages..."
+
+    for _PACKAGE in "${_NPM_PACKAGES_TO_INSTALL[@]}"
+    do
+        npm_install $_PACKAGE
+
+        [ "$_FATAL_ERROR" = "YES" ] && return 0
+    done
+}
+
