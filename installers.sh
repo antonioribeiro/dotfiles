@@ -22,7 +22,7 @@ function install_homebrew()
 
         sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 
-        checkErrors
+        check_errors
 
         [ "$_FATAL_ERROR" = "YES" ] && return 0
     fi
@@ -31,25 +31,11 @@ function install_homebrew()
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    checkErrors; [ "$_FATAL_ERROR" = "YES" ] && return 0
+    check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     echo_done
 }
 
-function update_homebrew() 
-{
-    [ "$_FATAL_ERROR" = "YES" ] && return 0
-
-    echo_comment "Updating brew..."
-
-    brew update > $OUTPUT_FILE 2> $ERROR_FILE
-
-    checkErrors
-
-    [ "$_FATAL_ERROR" = "YES" ] && return 0
-
-    echo_done
-}
 
 function install_hushlogin()
 {
@@ -76,9 +62,9 @@ function install_ohmyzsh()
 
     echo_info 'Installing oh-my-zsh...'
 
-    curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh > $OUTPUT_FILE 2> $ERROR_FILE
+    curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh > $_OUTPUT_FILE 2> $_ERROR_FILE
 
-    checkErrors; [ "$_FATAL_ERROR" = "YES" ] && return 0
+    check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     echo_done
 }
@@ -250,14 +236,6 @@ function install_powerline_fonts()
 }
 
 
-function install_z()
-{
-    [ "$_INSTALL_Z" != "YES" ] && return 0
-
-    brew_install z
-}
-
-
 function install_php() 
 {
     [ "$_INSTALL_PHP" != "YES" ] && return 0
@@ -317,125 +295,11 @@ function install_composer()
 }
 
 
-function install_node()
-{
-    [ "$_INSTALL_NODE" != "YES" ] && return 0
-
-    brew_install node@8
-}
-
-
-function install_pkg_config()
-{
-    [ "$_INSTALL_PKG_CONFIG" != "YES" ] && return 0
-
-    brew_install pkg-config
-}
-
-
-function install_wget() 
-{
-    [ "$_INSTALL_WGET" != "YES" ] && return 0
-
-    brew_install wget
-}
-
-
-function install_httpie() 
-{
-    [ "$_INSTALL_HTTPIE" != "YES" ] && return 0
-
-    brew_install httpie
-}
-
-
-function install_joe() 
-{
-    [ "$_INSTALL_JOE" != "YES" ] && return 0
-
-    brew_install joe
-}
-
-
-function install_nginx() 
-{
-    [ "$_INSTALL_NGINX" != "YES" ] && return 0
-
-    brew_install nginx
-}
-
-
-function install_dnsmasq() 
-{
-    [ "$_INSTALL_DNSMASQ" != "YES" ] && return 0
-
-    brew_install dnsmasq
-}
-
-
-function install_ncdu() 
-{
-    [ "$_INSTALL_NCDU" != "YES" ] && return 0
-
-    brew_install ncdu
-}
-
-
-function install_hub() 
-{
-    [ "$_INSTALL_HUB" != "YES" ] && return 0
-
-    brew_install hub
-    
-    configure_git
-}
-
-
-function install_ack() 
-{
-    [ "$_INSTALL_ACK" != "YES" ] && return 0
-
-    brew_install ack
-}
-
-
-function install_doctl() 
-{
-    [ "$_INSTALL_DOCTL" != "YES" ] && return 0
-
-    brew_install doctl
-}
-
-
-function install_imagemagick() 
-{
-    [ "$_INSTALL_IMAGE_MAGICK" != "YES" ] && return 0
-
-    brew_install imagemagick
-}
-
-
 function install_imagick() 
 {
-    [ "$_INSTALL_IMAGIC" != "YES" ] && return 0
+    [ "$_INSTALL_PHP_IMAGIC" != "YES" ] && return 0
 
     execute pecl install imagick
-}
-
-
-function install_memcached() 
-{
-    [ "$_INSTALL_MEMCACHED" != "YES" ] && return 0
-
-    brew_install memcached
-}
-
-
-function install_redis() 
-{
-    [ "$_INSTALL_REDIS" != "YES" ] && return 0
-
-    brew_install redis
 }
 
 
@@ -450,13 +314,6 @@ function install_quicklook_plugins()
     execute brew cask install --force qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip webpquicklook suspicious-package
 }
 
-
-function install_autoconf() 
-{
-    [ "$_INSTALL_AUTOCONF" != "YES" ] && return 0
-
-    brew_install autoconf
-}
 
 function install_php_pear() 
 {
@@ -532,14 +389,6 @@ function install_postgresql()
 }
 
 
-function install_laravel_envoy() 
-{
-    [ "$_INSTALL_LARAVEL_ENVOY" != "YES" ] && return 0
-
-    composer_install laravel/envoy 
-}
-
-
 function install_laravel_valet() 
 {
     [ "$_INSTALL_LARAVEL_VALET" != "YES" ] && return 0
@@ -556,23 +405,6 @@ function install_laravel_valet()
 }
 
 
-function install_spatie_phpunit_watcher() 
-{
-    [ "$_INSTALL_SPATIE_PHPUNIT_WATCHER" != "YES" ] && return 0
-
-    composer_install spatie/phpunit-watcher 
-}
-
-
-function install_spatie_mixed_content_scanner_cli() 
-{
-    [ "$_INSTALL_SPATIE_MIXED_CONTENT_SCANNER" != "YES" ] && return 0
-
-    composer_install spatie/mixed-content-scanner-cli 
-}
-
-
-
 function install_mysql() 
 {
     [ "$_INSTALL_MYSQL" != "YES" ] && return 0
@@ -586,21 +418,6 @@ function install_mysql()
     execute brew services start mysql@5.7
 }
 
-
-function install_yarn() 
-{
-    [ "$_INSTALL_YARN" != "YES" ] && return 0
-
-    brew_install yarn
-}
-
-
-function install_ghostscript() 
-{
-    [ "$_INSTALL_GHOSTSCRIPT" != "YES" ] && return 0
-
-    brew_install ghostscript
-}
 
 
 function install_zsh_autosuggestions() 
@@ -638,9 +455,8 @@ function configure_macos()
 {
     echo_info "Configuring macOS..."
 
-    source macos-config.sh > $OUTPUT_FILE 2> $ERROR_FILE
+    source macos-config.sh > $_OUTPUT_FILE 2> $_ERROR_FILE
 }
-
 
 
 function install_prettier() 
@@ -664,4 +480,36 @@ function configure_git()
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     execute git config --global user.email "$___EMAIL___"
+}
+
+function install_composer_packages()
+{
+    [ "$_INSTALL_COMPOSER_PACKAGES" != "YES" ] && return 0
+
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    echo_info "Installing all Composer packages..."
+
+    for _PACKAGE in "${_COMPOSER_PACKAGES_TO_INSTALL[@]}"
+    do
+        composer_install $_PACKAGE
+
+        [ "$_FATAL_ERROR" = "YES" ] && return 0
+    done
+}
+
+function install_brew_packages()
+{
+    [ "$_INSTALL_BREW_PACKAGES" != "YES" ] && return 0
+
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    echo_info "Installing all Homebrew packages..."
+
+    for _PACKAGE in "${_BREW_PACKAGES_TO_INSTALL[@]}"
+    do
+        brew_install $_PACKAGE
+
+        [ "$_FATAL_ERROR" = "YES" ] && return 0
+    done
 }

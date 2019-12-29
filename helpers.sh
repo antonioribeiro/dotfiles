@@ -14,9 +14,9 @@ function execute()
 
     eval $_SUDO $_COMMAND > $_OUTPUT_FILE 2> $_ERROR_FILE
 
-    checkErrors
+    check_errors
     
-    _SUDO=$SUDO_DEFAULT
+    _SUDO=$_SUDO_DEFAULT
 
     [ "$FATAL_ERROR" = "YES" ] && return 0
 
@@ -36,26 +36,13 @@ function clear_output_files()
 {
     if [ -f "$_OUTPUT_FILE" ] 
     then
-        rm $_OUTPUT_FILE
+        echo "" > $_OUTPUT_FILE
     fi
 
     if [ -f "$_ERROR_FILE" ] 
     then
-        rm $_ERROR_FILE
+        echo "" > $_ERROR_FILE
     fi
-}
-
-
-function checkErrors() 
-{    
-    if [ $? -ne 0 ]
-    then
-        echo
-
-        echo_error "=== COMMAND EXECUTION FAILED ==="
-
-        FATAL_ERROR=YES
-    fi  
 }
 
 
@@ -100,6 +87,8 @@ function display_errors()
     echo "------------------------------------ ERROR:"
 
     cat $_ERROR_FILE
+
+    echo_error "=== CHECK ERROR LOG ABOVE ==="
 }
 
 
@@ -206,9 +195,49 @@ function delete_if_exists()
 }
 
 
+function update_homebrew() 
+{
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    [ "$_HOMEBREW_WAS_UPATED" = "YES" ] && return 0
+
+    echo_comment "Updating Homebrew..."
+
+    brew update > $_OUTPUT_FILE 2> $_ERROR_FILE
+
+    check_errors
+
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    _HOMEBREW_WAS_UPATED=YES
+    
+    echo_done
+}
+
+
+function update_composer() 
+{
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    [ "$_COMPOSER_WAS_UPATED" = "YES" ] && return 0
+
+    echo_comment "Updating Composer..."
+
+    composer self-update
+
+    check_errors
+
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    _COMPOSER_WAS_UPATED=YES
+}
+
+
 function brew_install()
 {
     [ "$FATAL_ERROR" = "YES" ] && return 0
+
+    update_homebrew
 
     echo_info "Installing $1..."
      
@@ -242,7 +271,7 @@ function php_exec()
 
     php -r "$_COMMAND" > $_OUTPUT_FILE 2> $_ERROR_FILE
     
-    checkErrors
+    check_errors
 }
 
 
@@ -254,7 +283,7 @@ function pecl_install()
 
     _INSTALLED=`pecl list | grep $_PACKAGE`
 
-    echo_info "Installing $_PACKAGE..."
+    echo_info "Installing PHP extension: $_PACKAGE..."
 
     if [ "$_INSTALLED" != "" ]
     then
@@ -267,7 +296,7 @@ function pecl_install()
     
     printf "\n" | sudo pecl install $_PACKAGE > $_OUTPUT_FILE 2> $_ERROR_FILE
 
-    checkErrors    
+    check_errors    
 
     [ "$FATAL_ERROR" = "YES" ] && return 0
 
@@ -279,7 +308,11 @@ function composer_install()
 {
     [ "$FATAL_ERROR" = "YES" ] && return 0
 
+    update_composer
+
     _PACKAGE=$1
+
+    echo_info "Installing $_PACKAGE using Composer..."
 
     if [ -d "$_COMPOSER_HOME/vendor/$_PACKAGE" ]
     then
@@ -287,8 +320,6 @@ function composer_install()
 
         return 0
     fi
-
-    echo_info "Installing $_PACKAGE using Composer..."
 
     execute composer global require $_PACKAGE
 }
@@ -343,4 +374,46 @@ function npm_install()
 function fix_file_permissions() 
 {
     sudo chown -R $___USERNAME___:$___USERGROUP___ $HOME/.config
+}
+
+
+function load_file_to_array()
+{
+    _DEFAULTS=$1
+    
+    _OVERRIDE=$2
+
+    _VARIABLE=$3
+
+    if [ -f "$_OVERRIDE" ]
+    then
+        _FILE="$_OVERRIDE"
+    else
+        _FILE="$_DEFAULTS"
+    fi
+
+    ___ARRAY="EMPTY"
+
+    IFS=$'\n' read -d '' -r -a ___ARRAY < $_FILE
+
+    if [ "$___ARRAY" = "EMPTY" ]
+    then
+      FATAL_ERROR=YES 
+
+      echo "ERROR LOADING FILE $_FILE" > $_OUTPUT_FILE
+    fi
+
+    eval "$_VARIABLE=(${___ARRAY[@]})"
+}
+
+
+function load_installable_packages()
+{
+    [ "$FATAL_ERROR" = "YES" ] && return 0
+
+    load_file_to_array .composer_packages.defaults .composer_packages _COMPOSER_PACKAGES_TO_INSTALL
+
+    [ "$FATAL_ERROR" = "YES" ] && return 0
+    
+    load_file_to_array .brew_packages.defaults .brew_packages _BREW_PACKAGES_TO_INSTALL
 }
