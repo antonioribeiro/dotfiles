@@ -1,0 +1,1 @@
+/Users/antoniocarlosribeirofaria/.dotfiles/shell/.vim
