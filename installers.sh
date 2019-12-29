@@ -295,14 +295,6 @@ function install_composer()
 }
 
 
-function install_imagick() 
-{
-    [ "$_INSTALL_PHP_IMAGIC" != "YES" ] && return 0
-
-    execute pecl install imagick
-}
-
-
 function install_quicklook_plugins() 
 {
     [ "$_INSTALL_QUICKLOOK_PLUGINS" != "YES" ] && return 0
@@ -351,29 +343,6 @@ function install_xcode_select()
     execute xcode-select --install
 }
 
-
-function install_php_xdebug() 
-{
-    [ "$_INSTALL_PHP_XDEBUG" != "YES" ] && return 0
-
-    pecl_install xdebug
-}
-
-
-function install_php_redis() 
-{
-    [ "$_INSTALL_PHP_REDIS" != "YES" ] && return 0
-
-    pecl_install redis
-}
-
-
-function install_php_imagick() 
-{
-    [ "$_INSTALL_PHP_IMAGICK" != "YES" ] && return 0
-
-    pecl_install imagick   
-}
 
 function install_postgresql() 
 {
@@ -472,51 +441,26 @@ function configure_git()
     execute git config --global user.email "$___EMAIL___"
 }
 
+
 function install_composer_packages()
 {
-    [ "$_INSTALL_COMPOSER_PACKAGES" != "YES" ] && return 0
-
-    [ "$_FATAL_ERROR" = "YES" ] && return 0
-
-    echo_warning "Installing all Composer packages..."
-
-    for _PACKAGE in "${_COMPOSER_PACKAGES_TO_INSTALL[@]}"
-    do
-        composer_install $_PACKAGE
-
-        [ "$_FATAL_ERROR" = "YES" ] && return 0
-    done
+    install_all_packages $_INSTALL_COMPOSER_PACKAGES "Composer" ".composer_packages" composer_install
 }
+
 
 function install_brew_packages()
 {
-    [ "$_INSTALL_BREW_PACKAGES" != "YES" ] && return 0
-
-    [ "$_FATAL_ERROR" = "YES" ] && return 0
-
-    echo_warning "Installing all Homebrew packages..."
-
-    for _PACKAGE in "${_BREW_PACKAGES_TO_INSTALL[@]}"
-    do
-        brew_install $_PACKAGE
-
-        [ "$_FATAL_ERROR" = "YES" ] && return 0
-    done
+    install_all_packages $_INSTALL_BREW_PACKAGES "Homebrew" ".brew_packages" brew_install
 }
+
 
 function install_npm_packages() 
 {
-    [ "$_INSTALL_NPM_PACKAGES" != "YES" ] && return 0
-
-    [ "$_FATAL_ERROR" = "YES" ] && return 0
-
-    echo_warning "Installing all NPM packages..."
-
-    for _PACKAGE in "${_NPM_PACKAGES_TO_INSTALL[@]}"
-    do
-        npm_install $_PACKAGE
-
-        [ "$_FATAL_ERROR" = "YES" ] && return 0
-    done
+    install_all_packages $_INSTALL_NPM_PACKAGES "npm" ".npm_packages" npm_install
 }
 
+
+function install_pecl_packages() 
+{
+    install_all_packages $_INSTALL_PECL_PACKAGES "pecl" ".pecl_packages" pecl_install
+}

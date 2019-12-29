@@ -3,7 +3,7 @@
 # -- Overrides
 # You can create files to override the following configuration files:
 #
-# config.defaults.sh = config.sh
+# config.defaults.sh = config.sh *** CHECK THE FILE CONFIG.DEFAULTS.SH FOR MORE INSTRUCTIONS
 # .brew_packages.defaults = .brew_packages
 # .composer_packages.defaults = .composer_packages 
 # .npm_packages.defaults = .npm_packages 
@@ -83,12 +83,6 @@ function install
 
     # install_php_pear
 
-    # install_php_xdebug
-
-    # install_php_redis
-
-    # install_php_imagick
-
     # install_joe
 
     # install_nginx
@@ -103,12 +97,15 @@ function install
 
     # install_brew_packages
 
-    install_npm_packages
+    # install_npm_packages
 
-    fix_file_permissions
+    install_pecl_packages
+
+    # fix_file_permissions
 
     # display_instructions    
 }
+
 
 function check_errors() 
 {    
@@ -121,6 +118,7 @@ function check_errors()
         FATAL_ERROR=YES
     fi  
 }
+
 
 function configure_environment()
 {
@@ -143,6 +141,8 @@ function configure_environment()
     # overrides
     source config.sh 2>/dev/null
 }
+
+## Execute
 
 configure_environment
 install

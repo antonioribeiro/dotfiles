@@ -436,3 +436,30 @@ function load_installable_packages()
     
     load_file_to_array .npm_packages.defaults .npm_packages _NPM_PACKAGES_TO_INSTALL
 }
+
+function install_all_packages()
+{
+    _ENABLED=$1
+
+    [ "$_ENABLED" != "YES" ] && return 0
+
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    _NAME=$2
+
+    _FILE=$3
+
+    _EXECUTABLE=$4
+
+    load_file_to_array $_FILE.defaults $_FILE _PACKAGES
+
+    echo_warning "Installing all $_NAME packages..."
+
+    for _PACKAGE in "${_PACKAGES[@]}"
+    do
+        $_EXECUTABLE $_PACKAGE
+
+        [ "$_FATAL_ERROR" = "YES" ] && return 0
+    done
+}
+
