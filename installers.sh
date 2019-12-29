@@ -659,13 +659,9 @@ function configure_git()
 
     echo_info "Configuring git globals..."
 
-    git config --global user.name "$___NAME___"
-
-    checkErrors
+    execute git config --global user.name "$___NAME___"
 
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
-    git config --global user.email "$___EMAIL___"
-
-    checkErrors
+    execute git config --global user.email "$___EMAIL___"
 }
