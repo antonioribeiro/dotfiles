@@ -8,97 +8,97 @@ function install
 {
     check_variables
 
-    # configure_macos 
+    configure_macos 
 
-    # configure_git
+    configure_git
 
-    # install_homebrew
+    install_homebrew
 
-    # install_hushlogin
+    install_hushlogin
 
-    # install_ohmyzsh
+    install_ohmyzsh
 
-    # install_global_gitignore
+    install_global_gitignore
 
-    # install_zsh_prefs
+    install_zsh_prefs
 
-    # install_vim_prefs
+    install_vim_prefs
 
-    # install_yarn_prefs
+    install_yarn_prefs
 
-    # install_ohmyzsh_themes ### looks line this one is not working anymore
+    install_ohmyzsh_themes ### looks line this one is not working anymore
 
-    # install_powerline_fonts ### looks like the current fix for oh my zsh fonts
+    install_powerline_fonts ### looks like the current fix for oh my zsh fonts
     
-    # install_z
+    install_z
 
-    # install_php
+    install_php
 
-    # install_composer
+    install_composer
 
-    # install_node
+    install_node
 
-    # install_pkg_config
+    install_pkg_config
 
-    # install_wget 
+    install_wget 
 
-    # install_httpie
+    install_httpie
 
-    # install_ncdu
+    install_ncdu
 
-    # install_hub
+    install_hub
     
-    # install_ack
+    install_ack
     
-    # install_doctl
+    install_doctl
     
-    # install_imagemagick
+    install_imagemagick
 
-    # install_memcached
+    install_memcached
     
-    # install_redis
+    install_redis
 
-    # install_postgresql
+    install_postgresql
 
-    # install_mysql
+    install_mysql
 
-    # install_yarn
+    install_yarn
 
-    # install_ghostscript
+    install_ghostscript
 
-    # install_mackup
+    install_mackup
 
-    # install_zsh_autosuggestions
+    install_zsh_autosuggestions
     
-    # install_quicklook_plugins
+    install_quicklook_plugins
 
-    # install_autoconf
+    install_autoconf
 
-    # install_xcode_select
+    install_xcode_select
 
-    # install_php_pear
+    install_php_pear
 
-    # install_joe
+    install_joe
 
-    # install_nginx
+    install_nginx
 
-    # install_dnsmasq
+    install_dnsmasq
 
-    # install_laravel_valet
+    install_laravel_valet
 
-    # install_prettier
+    install_prettier
 
-    # install_composer_packages
+    install_composer_packages
 
-    # install_brew_packages
+    install_brew_packages
 
     install_npm_packages
 
     install_pecl_packages
 
-    # fix_file_permissions
+    fix_file_permissions
 
-    # display_instructions    
+    display_instructions    
 }
 
 
