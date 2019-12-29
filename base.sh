@@ -92,7 +92,7 @@ function install
 
     # install_brew_packages
 
-    # install_npm_packages
+    install_npm_packages
 
     install_pecl_packages
 
@@ -104,14 +104,13 @@ function install
 
 function configure_environment()
 {
+    source config.defaults.sh
+    check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     source helpers.sh
     check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     source installers.sh
-    check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
-
-    source config.defaults.sh
     check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     source shell/.aliases
@@ -136,3 +135,29 @@ function check_errors()
         FATAL_ERROR=YES
     fi  
 }
+
+
+function display_errors()
+{
+    [ "$FATAL_ERROR" != "YES" ] && return 0
+
+    echo "------------------------------------ COMMAND:"
+
+    echo $_COMMAND
+
+    echo "------------------------------------ OUTPUT:"
+
+    cat $_OUTPUT_FILE
+
+    echo "------------------------------------ ERROR:"
+
+    cat $_ERROR_FILE
+
+    tput bold
+    tput setaf 1
+
+    echo "=== CHECK ERROR LOG ABOVE ==="
+
+    tput sgr0
+}
+

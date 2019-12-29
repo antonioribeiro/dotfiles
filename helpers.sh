@@ -70,26 +70,6 @@ function line()
 }
 
 
-function display_errors()
-{
-    [ "$FATAL_ERROR" != "YES" ] && return 0
-
-    echo "------------------------------------ COMMAND:"
-
-    echo $_COMMAND
-
-    echo "------------------------------------ OUTPUT:"
-
-    cat $_OUTPUT_FILE
-
-    echo "------------------------------------ ERROR:"
-
-    cat $_ERROR_FILE
-
-    echo_error "=== CHECK ERROR LOG ABOVE ==="
-}
-
-
 function echo_error() 
 {
     tput bold
@@ -298,6 +278,8 @@ function pecl_install()
     then
         echo_success "Package $_PACKAGE is already installed."
 
+        echo 
+        
         return 0
     fi
 
