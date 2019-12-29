@@ -28,33 +28,9 @@ function install
 
     install_powerline_fonts ### looks like the current fix for oh my zsh fonts
     
-    install_z
-
     install_php
 
     install_composer
-
-    install_node
-
-    install_pkg_config
-
-    install_wget 
-
-    install_httpie
-
-    install_ncdu
-
-    install_hub
-    
-    install_ack
-    
-    install_doctl
-    
-    install_imagemagick
-
-    install_memcached
-    
-    install_redis
 
     install_postgresql
 
@@ -68,27 +44,17 @@ function install
 
     install_zsh_autosuggestions
     
-    install_quicklook_plugins
-
-    install_autoconf
-
     install_xcode_select
 
     install_php_pear
 
-    install_joe
-
-    install_nginx
-
-    install_dnsmasq
-
     install_laravel_valet
-
-    install_prettier
 
     install_composer_packages
 
     install_brew_packages
+
+    install_brew_cask_packages
 
     install_npm_packages
 
@@ -128,16 +94,14 @@ function check_errors()
     then
         echo
 
-        echo_error "=== COMMAND EXECUTION FAILED ==="
-
-        FATAL_ERROR=YES
+        set_error "=== COMMAND EXECUTION FAILED ==="
     fi  
 }
 
 
 function display_errors()
 {
-    [ "$FATAL_ERROR" != "YES" ] && return 0
+    [ "$_FATAL_ERROR" != "YES" ] && return 0
 
     echo "------------------------------------ COMMAND:"
 
@@ -159,3 +123,26 @@ function display_errors()
     tput sgr0
 }
 
+function set_error()
+{
+    _MESSAGE=$1
+
+    if [ "$_FATAL_ERROR_MESSAGE_GIVEN" != "YES" ]
+    then
+        if [ "$_MESSAGE" = "" ]
+        then
+            _MESSAGE="A FATAL ERROR OCURRED"
+        fi
+
+        tput bold
+        tput setaf 1
+
+        echo "=== $_MESSAGE ==="
+
+        tput sgr0
+
+        _FATAL_ERROR_MESSAGE_GIVEN=YES
+    fi    
+
+    _FATAL_ERROR=YES
+}

@@ -7,7 +7,7 @@
 # and
 # https://github.com/geerlingguy/dotfiles/blob/master/.osx
 
-[ "$FATAL_ERROR" = "YES" ] && return 0
+[ "$_FATAL_ERROR" = "YES" ] && return 0
 
 echo_comment "Computer hostname: $___HOSTNAME___"
 

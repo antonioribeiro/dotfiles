@@ -20,6 +20,8 @@ function install_homebrew()
         
         echo_info "Removing brew old files..."
 
+        sudo_warning "Reinstalling brew"
+
         sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 
         check_errors
@@ -269,9 +271,7 @@ function install_composer()
 
     if [ "$_MD5" != "94ba596cb59085f4b8036863c4a6b237" ]
     then
-        FATAL_ERROR=YES
-
-        echo_error "composer-setup.php file's MD5 does not match 94ba596cb59085f4b8036863c4a6b237"
+        set_error "composer-setup.php file's MD5 does not match 94ba596cb59085f4b8036863c4a6b237"
 
         return 0
     fi
@@ -288,22 +288,8 @@ function install_composer()
     then 
         echo_success "Composer ($_COMPOSER_EXECUTABLE) was sucessfully installed and tested."
     else
-        FATAL_ERROR=YES
-
-        echo_error "ERROR: Composer was installed but it's not available."        
+        set_error "ERROR: Composer was installed but it's not available."        
     fi
-}
-
-
-function install_quicklook_plugins() 
-{
-    [ "$_INSTALL_QUICKLOOK_PLUGINS" != "YES" ] && return 0
-
-    [ "$_FATAL_ERROR" = "YES" ] && return 0
-
-    echo_info 'Installing some nice quicklook plugins...'
-
-    execute brew cask install --force qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip webpquicklook suspicious-package
 }
 
 
@@ -323,6 +309,8 @@ function install_php_pear()
 
     echo_info "Installing pear..."
     
+    sudo_warning "Installing Pear"
+
     execute_sudo php install-pear-nozlib.phar -d /usr/local/lib/php -b /usr/local/bin
 
     echo_info "Update pecl channels..."
@@ -340,7 +328,9 @@ function install_xcode_select()
 
     echo_info 'Installing xcode select...'
 
-    execute xcode-select --install
+    xcode-select --install 2>/dev/null
+
+    echo
 }
 
 
@@ -366,11 +356,15 @@ function install_laravel_valet()
 
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
-    echo_comment "> valet install"
-
     add_composer_to_path
 
-    execute valet install
+    sudo_warning "Installing Valet"
+  
+    echo_comment "> valet install"
+
+    valet install
+
+    check_errors
 }
 
 
@@ -423,6 +417,8 @@ function display_instructions()
 function configure_macos()
 {
     echo_info "Configuring macOS..."
+    
+    sudo_warning "macOS configuration"
 
     source macos-config.sh > $_OUTPUT_FILE 2> $_ERROR_FILE
 }
@@ -454,6 +450,12 @@ function install_brew_packages()
 }
 
 
+function install_brew_cask_packages() 
+{
+    install_all_packages $_INSTALL_BREW_CASK_PACKAGES "brew cask" ".brew_cask_packages" brew_cask_install
+}
+
+
 function install_npm_packages() 
 {
     install_all_packages $_INSTALL_NPM_PACKAGES "npm" ".npm_packages" npm_install
@@ -464,3 +466,4 @@ function install_pecl_packages()
 {
     install_all_packages $_INSTALL_PECL_PACKAGES "pecl" ".pecl_packages" pecl_install
 }
+

@@ -2,7 +2,7 @@
 
 function execute() 
 {
-    [ "$FATAL_ERROR" = "YES" ] && return 0
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     clear_output_files
 
@@ -16,7 +16,7 @@ function execute()
     
     _SUDO=$_SUDO_DEFAULT
 
-    [ "$FATAL_ERROR" = "YES" ] && return 0
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     echo_done
 }
@@ -144,11 +144,11 @@ function delete_if_exists()
 
     if [ "$_FILE_NAME" = "" ] || [ "$_FILE_NAME" = "." ] || [ "$_FILE_NAME" = ".." ] || [ "$_FILE_NAME" = "/" ]
     then
-        FATAL_ERROR=YES
+        set_error
 
         if [ "$_SHOW_MESSAGES" = "YES" ]
         then
-            echo_error "WRONG FILE NAME OR DIRECTORY"
+            set_error "WRONG FILE NAME OR DIRECTORY"
         fi
     fi
 
@@ -224,7 +224,7 @@ function update_composer()
 
 function brew_install()
 {
-    [ "$FATAL_ERROR" = "YES" ] && return 0
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     update_homebrew
 
@@ -249,10 +249,36 @@ function brew_install()
     execute brew $_SUBCOMMAND $1
 }
 
+function brew_cask_install()
+{
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    update_homebrew
+
+    echo_info "Installing cask $1..."
+     
+    if brew cask ls --versions $1 > /dev/null
+    then
+        echo_success "Cask '$1' is already installed."
+
+        _SUBCOMMAND=reinstall
+
+        if [ "$_BREW_REINSTALL_ALL_PACKAGES" != "YES" ] 
+        then 
+            echo
+
+            return 0
+        fi
+    else
+        _SUBCOMMAND=install
+    fi
+
+    execute brew cask $_SUBCOMMAND $1
+}
 
 function php_exec()
 {
-    [ "$FATAL_ERROR" = "YES" ] && return 0
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     _COMMAND=$@
 
@@ -266,7 +292,7 @@ function php_exec()
 
 function pecl_install()
 {
-    [ "$FATAL_ERROR" = "YES" ] && return 0
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     _PACKAGE=$1
 
@@ -279,9 +305,11 @@ function pecl_install()
         echo_success "Package $_PACKAGE is already installed."
 
         echo 
-        
+
         return 0
     fi
+
+    sudo_warning "Installing pecl packages"
 
     echo_comment "> sudo pecl install $_PACKAGE"
     
@@ -289,7 +317,7 @@ function pecl_install()
 
     check_errors    
 
-    [ "$FATAL_ERROR" = "YES" ] && return 0
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     echo_done
 }
@@ -297,7 +325,7 @@ function pecl_install()
 
 function composer_install()
 {
-    [ "$FATAL_ERROR" = "YES" ] && return 0
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     update_composer
 
@@ -329,9 +357,7 @@ function check_variables()
 
         if [ "$_VALUE" = "" ]
         then
-            echo_error "The variable '$_VAR_NAME' was not set. Please check the config.dewfaults.sh file."
-
-            FATAL_ERROR=YES
+            set_error "The variable '$_VAR_NAME' was not set. Please check the config.dewfaults.sh file."
         fi            
     done
 }
@@ -345,7 +371,7 @@ function add_composer_to_path()
 
 function npm_install()
 {
-    [ "$FATAL_ERROR" = "YES" ] && return 0
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     _PACKAGE=$1
 
@@ -368,7 +394,11 @@ function npm_install()
 
 function fix_file_permissions() 
 {
-    echo_comment "We now need to use sudo to fix some file permissions, please provide your password:"
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    echo_info "Fixing file permissions..."
+    
+    sudo_warning "Modifying file permissions"
 
     sudo chown -R $___USERNAME___:$___USERGROUP___ $HOME/.config
 }
@@ -376,6 +406,8 @@ function fix_file_permissions()
 
 function load_file_to_array()
 {
+    cd $_DOTFILES_ROOT
+
     _DEFAULTS=$1
     
     _OVERRIDE=$2
@@ -386,35 +418,50 @@ function load_file_to_array()
     then
         _FILE="$_OVERRIDE"
     else
+        if [ ! -f "$_DEFAULTS" ]
+        then
+            set_error 
+
+            echo "File $_DEFAULTS does not exists" > $_ERROR_FILE
+        fi    
+
         _FILE="$_DEFAULTS"
     fi
+
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     ___ARRAY="EMPTY"
 
     IFS=$'\n' read -d '' -r -a ___ARRAY < $_FILE
 
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+    
     if [ "$___ARRAY" = "EMPTY" ]
     then
-      FATAL_ERROR=YES 
+      set_error 
 
       echo "ERROR LOADING FILE $_FILE" > $_OUTPUT_FILE
+
+      return 0
     fi
 
     eval "$_VARIABLE=(${___ARRAY[@]})"
+
+    check_errors
 }
 
 
 function load_installable_packages()
 {
-    [ "$FATAL_ERROR" = "YES" ] && return 0
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     load_file_to_array .composer_packages.defaults .composer_packages _COMPOSER_PACKAGES_TO_INSTALL
 
-    [ "$FATAL_ERROR" = "YES" ] && return 0
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
     
     load_file_to_array .brew_packages.defaults .brew_packages _BREW_PACKAGES_TO_INSTALL
 
-    [ "$FATAL_ERROR" = "YES" ] && return 0
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
     
     load_file_to_array .npm_packages.defaults .npm_packages _NPM_PACKAGES_TO_INSTALL
 }
@@ -433,7 +480,9 @@ function install_all_packages()
 
     _EXECUTABLE=$4
 
-    load_file_to_array $_FILE.defaults $_FILE _PACKAGES
+    load_file_to_array "$_FILE.defaults" $_FILE _PACKAGES
+
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     echo_warning "Installing all $_NAME packages..."
 
@@ -445,3 +494,14 @@ function install_all_packages()
     done
 }
 
+function sudo_warning()
+{
+    _MESSAGE=$1
+
+    if [ "$_MESSAGE" != "$_OLD_SUDO_MESSAGE" ]
+    then
+        _OLD_SUDO_MESSAGE=$_MESSAGE
+
+        echo_warning "$1 may require your sudo password, please provide it if asked."
+    fi    
+}
