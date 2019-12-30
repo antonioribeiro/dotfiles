@@ -88,7 +88,7 @@ function install_global_gitignore()
 
     echo_info 'Linking global-gitignore...'
 
-    execute ln -s $DOTFILES_ROOT/shell/.global-gitignore $HOME/.global-gitignore
+    execute ln -s $_DOTFILES_ROOT/shell/.global-gitignore $HOME/.global-gitignore
 
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
@@ -110,7 +110,9 @@ function install_zsh_prefs()
 
     echo_info 'Creating .zsrc link...'
 
-    execute ln -s $DOTFILES_ROOT/shell/.zshrc $HOME/.zshrc
+    echo _DOTFILES_ROOT=$_DOTFILES_ROOT
+
+    execute ln -s $_DOTFILES_ROOT/shell/.zshrc $HOME/.zshrc
 }
 
 
@@ -128,7 +130,7 @@ function install_vim_prefs()
 
     echo_info 'Creating .vimrc link...'
 
-    execute ln -s $DOTFILES_ROOT/shell/.vimrc $HOME/.vimrc
+    execute ln -s $_DOTFILES_ROOT/shell/.vimrc $HOME/.vimrc
 
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
@@ -139,7 +141,7 @@ function install_vim_prefs()
 
     echo_info 'Creating .vim link...'
 
-    execute ln -s $DOTFILES_ROOT/shell/.vim $HOME/.vim
+    execute ln -s $_DOTFILES_ROOT/shell/.vim $HOME/.vim
 }
 
 
@@ -157,7 +159,7 @@ function install_yarn_prefs()
 
     echo_info 'Creating .yarnrc link...'
 
-    execute ln -s $DOTFILES_ROOT/shell/.yarnrc $HOME/.yarnrc
+    execute ln -s $_DOTFILES_ROOT/shell/.yarnrc $HOME/.yarnrc
 }
 
 
@@ -176,7 +178,7 @@ function install_mackup()
     echo_info 'Creating .mackup.cfg link...'
 
     # Symlink the Mackup config
-    execute ln -s $DOTFILES_ROOT/macos/.mackup.cfg $HOME/.mackup.cfg
+    execute ln -s $_DOTFILES_ROOT/macos/.mackup.cfg $HOME/.mackup.cfg
 
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
@@ -234,7 +236,7 @@ function install_powerline_fonts()
     execute bash ./install.sh
 
     # clean-up a bit
-    cd $DOTFILES_ROOT
+    cd $_DOTFILES_ROOT
 }
 
 
@@ -317,7 +319,7 @@ function install_php_pear()
 
     execute_sudo pecl channel-update pecl.php.net
 
-    cd $DOTFILES_ROOT
+    cd $_DOTFILES_ROOT
 }
 
 function install_xcode_select() 
@@ -406,7 +408,7 @@ function display_instructions()
     echo 'Some optional tidbits'
 
     echo '1. Make sure dropbox is running first. If you have not backed up via Mackup yet, then run `mackup backup` to symlink preferences for a wide collection of apps to your dropbox. If you already had a backup via mackup run `mackup restore` You'\''ll find more info on Mackup here: https://github.com/lra/mackup.'
-    echo '2. Set some sensible os x defaults by running: $DOTFILES_ROOT/macos/set-defaults.sh'
+    echo '2. Set some sensible os x defaults by running: $_DOTFILES_ROOT/macos/set-defaults.sh'
     echo '3. Make a .dotfiles-custom/shell/.aliases for your personal commands'
 
     echo '++++++++++++++++++++++++++++++'
@@ -466,4 +468,3 @@ function install_pecl_packages()
 {
     install_all_packages $_INSTALL_PECL_PACKAGES "pecl" ".pecl_packages" pecl_install
 }
-

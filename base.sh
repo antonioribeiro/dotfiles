@@ -16,6 +16,10 @@ function install
 
     install_hushlogin
 
+    install_brew_packages
+
+    install_brew_cask_packages
+
     install_ohmyzsh
 
     install_global_gitignore
@@ -52,10 +56,6 @@ function install
 
     install_composer_packages
 
-    install_brew_packages
-
-    install_brew_cask_packages
-
     install_npm_packages
 
     install_pecl_packages
@@ -68,7 +68,7 @@ function install
 
 function configure_environment()
 {
-    source config.defaults.sh
+    source environment.defaults.sh
     check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     source helpers.sh
@@ -84,7 +84,7 @@ function configure_environment()
     load_installable_packages
 
     # overrides
-    source config.sh 2>/dev/null
+    source environment.sh 2>/dev/null
 }
 
 

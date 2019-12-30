@@ -3,7 +3,7 @@
 # -- Overrides
 # You can create files to override the following configuration files:
 #
-# config.defaults.sh = config.sh *** CHECK THE FILE CONFIG.DEFAULTS.SH FOR MORE INSTRUCTIONS
+# environment.defaults.sh = environment.sh *** CHECK THE FILE CONFIG.DEFAULTS.SH FOR MORE INSTRUCTIONS
 # .brew_packages.defaults = .brew_packages
 # .composer_packages.defaults = .composer_packages 
 # .npm_packages.defaults = .npm_packages 

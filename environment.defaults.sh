@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Create a config.sh file to override the defaults containing in this file.
+# Create a environment.sh file to override the defaults containing in this file.
 
 # --- mandatory variables
-# The variables below must be created manually or set in your config.sh file
+# The variables below must be created manually or set in your environment.sh file
 # 
 # export ___HOSTNAME___=
 # export ___USERNAME___=
@@ -12,7 +12,10 @@
 # export ___EMAIL___=
 # ---
 
+# DO NOT CHANGE / OR UPDATE OTHER REFERENCES
 export _DOTFILES_ROOT=$HOME/.dotfiles
+
+# You are free to change those
 export _SUDO_DEFAULT=""
 export _SUDO=$_SUDO_DEFAULT
  
@@ -25,6 +28,8 @@ export _COMPOSER_BIN=$COMPOSER_HOME/vendor/bin
 
 export _BREW_EXECUTABLE=/usr/local/bin/brew
 export _BREW_REINSTALL_ALL_PACKAGES=NO
+
+export _XDEBUG_IDE_KEY=PHPSTORM
 
 export _INSTALL_HUSHLOGIN=YES
 export _INSTALL_OHMYZSH=YES
@@ -50,3 +55,30 @@ export _INSTALL_BREW_PACKAGES=YES
 export _INSTALL_BREW_CASK_PACKAGES=YES
 export _INSTALL_NPM_PACKAGES=YES
 export _INSTALL_PECL_PACKAGES=YES
+
+# Hide username in prompt
+DEFAULT_USER=`whoami`
+
+export PATH="$PATH:$HOME/.rvm/bin"
+
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+
+# Sudoless npm https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+# Unset manpath so we can inherit from /etc/manpath via the `manpath`
+# command
+unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+export PATH=$HOME/.dotfiles/bin:$PATH
+
+# Setup xdebug
+export XDEBUG_CONFIG="idekey=$_XDEBUG_IDE_KEY"
+
+# Extra paths
+export PATH=Users/$DEFAULT_USER/.rvm/gems/ruby-2.1.2/bin:$PATH
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH=/usr/local/bin:$PATH
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
