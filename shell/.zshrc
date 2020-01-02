@@ -69,4 +69,3 @@ ssh-add -A 2>/dev/null;
 
 # Enable autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
