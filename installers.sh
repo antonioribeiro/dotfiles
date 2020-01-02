@@ -41,6 +41,8 @@ function install_homebrew()
 
 function install_hushlogin()
 {
+   [ "$_FATAL_ERROR" = "YES" ] && return 0
+
    [ "$_INSTALL_HUSHLOGIN" != "YES" ] && return 0
 
     echo_info 'Configuring hushlogin...'
@@ -242,6 +244,8 @@ function install_powerline_fonts()
 
 function install_php() 
 {
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
     [ "$_INSTALL_PHP" != "YES" ] && return 0
 
     brew_install php@7.2

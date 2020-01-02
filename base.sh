@@ -8,7 +8,7 @@ function install
 {
     check_variables
 
-    configure_macos 
+    # configure_macos
 
     configure_git
 
@@ -40,10 +40,6 @@ function install
 
     install_mysql
 
-    install_yarn
-
-    install_ghostscript
-
     install_mackup
 
     install_zsh_autosuggestions
@@ -68,6 +64,8 @@ function install
 
 function configure_environment()
 {
+    initialize_output_files
+
     source environment.defaults.sh
     check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
 
@@ -88,7 +86,14 @@ function configure_environment()
 }
 
 
-function check_errors() 
+function initialize_output_files()
+{
+    touch  $_OUTPUT_FILE
+    touch  $_ERROR_FILE
+}
+
+
+function check_errors()
 {    
     if [ $? -ne 0 ]
     then

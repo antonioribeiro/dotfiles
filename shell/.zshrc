@@ -57,7 +57,7 @@ unset file
 # Load rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
-# . $HOME/.dotfiles/shell/z.sh
+source /usr/local/etc/profile.d/z.sh
 
 # Alias hub to git
 eval "$(hub alias -s)"
