@@ -120,9 +120,9 @@ function install_zsh_prefs()
 
 function install_vim_prefs() 
 {
-    [ "$_INSTALL_VIM_PREFS" != "YES" ] && return 0
-
     [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    [ "$_INSTALL_VIM_PREFS" != "YES" ] && return 0
 
     # Symlink vim prefs
 
@@ -149,9 +149,9 @@ function install_vim_prefs()
 
 function install_yarn_prefs() 
 {
-    [ "$_INSTALL_YARN_PREFS" != "YES" ] && return 0
-
     [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    [ "$_INSTALL_YARN_PREFS" != "YES" ] && return 0
 
     # Symlink yarn prefs
 
@@ -167,9 +167,9 @@ function install_yarn_prefs()
 
 function install_mackup() 
 {
-    [ "$_INSTALL_MACKUP" != "YES" ] && return 0
-
     [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    [ "$_INSTALL_MACKUP" != "YES" ] && return 0
 
     echo_info "Install and configure mackup"
 
@@ -190,9 +190,9 @@ function install_mackup()
 
 function install_ohmyzsh_themes() 
 {
-    [ "$_INSTALL_OHMYZSH_THEMES" != "YES" ] && return 0
-
     [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    [ "$_INSTALL_OHMYZSH_THEMES" != "YES" ] && return 0
 
     # Fix missing fƒont characters (see https://github.com/robbyrussell/oh-my-zsh/issues/1906)
 
@@ -206,9 +206,9 @@ function install_ohmyzsh_themes()
 
 function install_powerline_fonts() 
 {
-    [ "$_INSTALL_POWERLINE_FONTS" != "YES" ] && return 0
-
     [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    [ "$_INSTALL_POWERLINE_FONTS" != "YES" ] && return 0
 
     cd /tmp
 
@@ -261,9 +261,9 @@ function install_php()
 
 function install_composer()
 {
-    [ "$_INSTALL_COMPOSER" != "YES" ] && return 0
-
     [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    [ "$_INSTALL_COMPOSER" != "YES" ] && return 0
 
     echo_info 'Installing Composer...'
     
@@ -301,9 +301,9 @@ function install_composer()
 
 function install_php_pear() 
 {
-    [ "$_INSTALL_PEAR" != "YES" ] && return 0
-
     [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    [ "$_INSTALL_PEAR" != "YES" ] && return 0
 
     echo_info 'Install pear'
 
@@ -328,9 +328,9 @@ function install_php_pear()
 
 function install_xcode_select() 
 {
-    [ "$_INSTALL_XCODE_SELECT" != "YES" ] && return 0
-
     [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    [ "$_INSTALL_XCODE_SELECT" != "YES" ] && return 0
 
     echo_info 'Installing xcode select...'
 
@@ -342,6 +342,8 @@ function install_xcode_select()
 
 function install_postgresql() 
 {
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
     [ "$_INSTALL_POSTGRESQL" != "YES" ] && return 0
 
     brew_install postgresql
@@ -356,6 +358,8 @@ function install_postgresql()
 
 function install_laravel_valet() 
 {
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
     [ "$_INSTALL_LARAVEL_VALET" != "YES" ] && return 0
 
     composer_install laravel/valet 
@@ -376,6 +380,8 @@ function install_laravel_valet()
 
 function install_mysql() 
 {
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
     [ "$_INSTALL_MYSQL" != "YES" ] && return 0
 
     brew_install mysql@5.7
@@ -391,6 +397,8 @@ function install_mysql()
 
 function install_zsh_autosuggestions() 
 {
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
     [ "$_INSTALL_ZSH_AUTOSUGGESTIONS" != "YES" ] && return 0
 
     brew_install zsh-autosuggestions
@@ -422,6 +430,8 @@ function display_instructions()
 
 function configure_macos()
 {
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
     echo_info "Configuring macOS..."
     
     sudo_warning "macOS configuration"
@@ -436,11 +446,11 @@ function configure_git()
 
     echo_info "Configuring git globals..."
 
-    execute git config --global user.name "$___NAME___"
+    execute git config --global --replace-all user.name "\"$___NAME___\""
 
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
-    execute git config --global user.email "$___EMAIL___"
+    execute git config --global --replace-all user.email "\"$___EMAIL___\""
 }
 
 
@@ -471,4 +481,18 @@ function install_npm_packages()
 function install_pecl_packages() 
 {
     install_all_packages $_INSTALL_PECL_PACKAGES "pecl" ".pecl_packages" pecl_install
+}
+
+function create_shortcuts()
+{
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    _SUBLIME="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+
+    if [ -f "$_SUBLIME" ]
+    then
+        echo_comment "Creating Sublime Text links..."
+        link "$_SUBLIME" /usr/local/bin/subl
+        link "$_SUBLIME" /usr/local/bin/sublime
+    fi
 }

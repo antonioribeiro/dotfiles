@@ -348,6 +348,8 @@ function composer_install()
 
 function check_variables()
 {
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
     names=(___HOSTNAME___ ___USERNAME___ ___USERGROUP___ ___NAME___ ___EMAIL___)
     
     for _VAR_NAME in "${names[@]}"

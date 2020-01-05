@@ -8,7 +8,7 @@ function install
 {
     check_variables
 
-    # configure_macos
+    configure_macos
 
     configure_git
 
@@ -56,6 +56,8 @@ function install
 
     install_pecl_packages
 
+    create_shortcuts
+    
     fix_file_permissions
 
     display_instructions    
@@ -64,9 +66,11 @@ function install
 
 function configure_environment()
 {
-    initialize_output_files
-
+    # These two files can only contain variable initialization:
     source environment.defaults.sh
+    source environment.sh 2>/dev/null
+
+    initialize_output_files
     check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     source helpers.sh
@@ -82,14 +86,14 @@ function configure_environment()
     load_installable_packages
 
     # overrides
-    source environment.sh 2>/dev/null
 }
 
 
 function initialize_output_files()
 {
-    touch  $_OUTPUT_FILE
-    touch  $_ERROR_FILE
+    touch $_OUTPUT_FILE
+
+    touch $_ERROR_FILE
 }
 
 
