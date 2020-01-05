@@ -388,9 +388,15 @@ function install_mysql()
 
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
-    echo_info "Starting MySQL..."
+    echo_info "Starting MySQL $___MYSQL_VERSION___..."
 
     execute brew services start mysql@$___MYSQL_VERSION___
+
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    echo_info "Brew linking MySQL $___MYSQL_VERSION___..."
+
+    execute brew link mysql@$___MYSQL_VERSION___ --force
 }
 
 
