@@ -1,5 +1,6 @@
 shell/.yarnrc
 
+config.sh
 environment.sh
 .composer_packages
 .bew_packages
