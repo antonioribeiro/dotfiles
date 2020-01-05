@@ -489,7 +489,7 @@ function create_shortcuts()
 
     _SUBLIME="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
 
-    if [ -f "$_SUBLIME" ]
+    if [ -f "$_SUBLIME" ] && [ ! -f /usr/local/bin/subl ]
     then
         echo_comment "Creating Sublime Text links..."
         link "$_SUBLIME" /usr/local/bin/subl
