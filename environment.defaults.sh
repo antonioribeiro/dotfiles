@@ -10,6 +10,7 @@
 # export ___USERGROUP___=
 # export ___NAME___=
 # export ___EMAIL___=
+# export ___MYSQL_VERSION___=5.7
 # ---
 
 # DO NOT CHANGE / OR UPDATE OTHER REFERENCES

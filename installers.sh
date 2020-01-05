@@ -384,13 +384,13 @@ function install_mysql()
 
     [ "$_INSTALL_MYSQL" != "YES" ] && return 0
 
-    brew_install mysql@5.7
+    brew_install mysql@$___MYSQL_VERSION___
 
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     echo_info "Starting MySQL..."
 
-    execute brew services start mysql@5.7
+    execute brew services start mysql@$___MYSQL_VERSION___
 }
 
 
