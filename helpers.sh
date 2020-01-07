@@ -350,7 +350,7 @@ function check_variables()
 {
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
-    names=(___HOSTNAME___ ___USERNAME___ ___USERGROUP___ ___NAME___ ___EMAIL___ ___MYSQL_VERSION___)
+    names=(___HOSTNAME___ ___USERNAME___ ___USERGROUP___ ___NAME___ ___EMAIL___ ___MYSQL_NAME___ ___MYSQL_VERSION___ ___GITHUB_TOKEN___)
     
     for _VAR_NAME in "${names[@]}"
     do

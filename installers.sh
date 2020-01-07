@@ -290,9 +290,13 @@ function install_composer()
 
     execute mv composer.phar $_COMPOSER_EXECUTABLE
 
+    echo_info "Configure Composer Github token"
+
+    execute composer config --global github-oauth.github.com $___GITHUB_TOKEN___
+
     if command -v composer > /dev/null
     then 
-        echo_success "Composer ($_COMPOSER_EXECUTABLE) was sucessfully installed and tested."
+        echo_success "All DONE: Composer ($_COMPOSER_EXECUTABLE) was sucessfully installed and tested."
     else
         set_error "ERROR: Composer was installed but it's not available."        
     fi
@@ -384,21 +388,20 @@ function install_mysql()
 
     [ "$_INSTALL_MYSQL" != "YES" ] && return 0
 
-    brew_install mysql@$___MYSQL_VERSION___
+    brew_install $___MYSQL_NAME___@$___MYSQL_VERSION___
 
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     echo_info "Starting MySQL $___MYSQL_VERSION___..."
 
-    execute brew services start mysql@$___MYSQL_VERSION___
+    execute brew services start $___MYSQL_NAME___@$___MYSQL_VERSION___
 
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     echo_info "Brew linking MySQL $___MYSQL_VERSION___..."
 
-    execute brew link mysql@$___MYSQL_VERSION___ --force
+    execute brew link $___MYSQL_NAME___@$___MYSQL_VERSION___ --force
 }
-
 
 
 function install_zsh_autosuggestions() 

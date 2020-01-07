@@ -10,7 +10,9 @@
 # export ___USERGROUP___=
 # export ___NAME___=
 # export ___EMAIL___=
-# export ___MYSQL_VERSION___=5.7
+# export ___MYSQL_NAME___=mariadb
+# export ___MYSQL_VERSION___=10.3
+# export ___GITHUB_TOKEN___=
 # ---
 
 # DO NOT CHANGE / OR UPDATE OTHER REFERENCES
