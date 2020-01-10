@@ -56,6 +56,8 @@ function install
 
     install_pecl_packages
 
+    install_docker
+    
     create_shortcuts
     
     fix_file_permissions
