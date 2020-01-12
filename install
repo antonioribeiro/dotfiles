@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# installer for small things:
+#
+#	./install docker
+#
+
+source ~/.dotfiles/base.sh
+
+run_installer $1

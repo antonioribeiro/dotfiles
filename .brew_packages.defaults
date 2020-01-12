@@ -19,6 +19,4 @@ wget
 yarn
 z
 zsh-autosuggestions
-docker 
-docker-machine
 telnet

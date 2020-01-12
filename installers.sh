@@ -505,3 +505,27 @@ function create_shortcuts()
         link "$_SUBLIME" /usr/local/bin/sublime
     fi
 }
+
+function install_docker()
+{
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    [ "$_INSTALL_DOCKER" != "YES" ] && return 0
+
+    brew_install docker 
+    brew_install docker-machine
+    brew_install docker-compose
+    brew_cask_install virtualbox
+
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    execute docker-machine create --driver virtualbox default
+
+    execute docker-machine env default
+
+    eval $(docker-machine env default)
+
+    check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    execute docker-machine stop default
+}

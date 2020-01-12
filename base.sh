@@ -6,6 +6,8 @@
 
 function install
 {
+    sudo -v #ask password beforehand
+
     check_variables
 
     configure_macos
@@ -56,11 +58,15 @@ function install
 
     install_pecl_packages
 
+    install_docker
+    
     create_shortcuts
     
     fix_file_permissions
 
     display_instructions    
+
+    display_errors
 }
 
 
@@ -155,3 +161,21 @@ function set_error()
 
     _FATAL_ERROR=YES
 }
+
+function run_installer
+{
+    INSTALLER="install_$1"
+
+    declare -f $INSTALLER > /dev/null;
+
+    if [ $? -ne 0 ]
+    then
+        echo_error "The function $INSTALLER does not exists."
+        
+        return 1       
+    fi
+
+    $INSTALLER
+}
+
+configure_environment
