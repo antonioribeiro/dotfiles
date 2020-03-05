@@ -21,7 +21,7 @@ cd .dotfiles
 #### Edit the .environment file
 
 Rename `.environment.defaults.sh` to `.environment.sh`, and add your personal information to the **mandatory variables**, name, email, Github token, etc. 
-But yoy can also use it to change other root stuff, like executable names.
+But you can also use it to change other root stuff, like executable names.
 
 ![env-vars](docs/env-vars.png)
 
