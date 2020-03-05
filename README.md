@@ -78,7 +78,8 @@ It has these `.defaults` files like `.brew_packages.default.sh` which can be ren
 If you want to disable deeper, it also has this new `base.sh` script where you can disable any installer you don't want run on your machine by commenting only one line:
 
 Disabling PHP for example: 
- 
+
+
 ```
 #!/bin/bash
 
@@ -100,5 +101,7 @@ function install
 }
 ```
 
-Feel free to create an issue on this repo if you have any questions about them.
+## Enjoy!!
+
+Feel free to create issues and pull requests on this repo, if you have any questions or want to help improve it.
 
