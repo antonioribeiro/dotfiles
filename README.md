@@ -27,7 +27,7 @@ But you can also use it to change other root stuff, like executable names.
 
 #### Select your packages
 
-You can rename the .defaults to remove or add more packages to be installed.
+You can rename all the `.defaults` files to disable or add more packages to be installed.
 
 #### Edit the `base.sh` file
 
