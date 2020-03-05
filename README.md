@@ -20,6 +20,10 @@ cd .dotfiles
 
 #### Edit the .environment file
 
+**This is mandatory**
+
+The script will not let you proceed if you don't:
+
 Rename `.environment.defaults.sh` to `.environment.sh`, and add your personal information to the **mandatory variables**, name, email, Github token, etc. 
 But you can also use it to change other root stuff, like executable names.
 
