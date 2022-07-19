@@ -10,7 +10,7 @@ function install
 
     check_variables
 
-    configure_macos
+    # configure_macos
 
     configure_git
 

@@ -69,3 +69,22 @@ ssh-add -A 2>/dev/null;
 
 # Enable autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+PATH="/Users/antonioribeiro/perl5/bin${PATH:+:${PATH}}:/Users/antonioribeiro/.nvm"; export PATH;
+PERL5LIB="/Users/antonioribeiro/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/antonioribeiro/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/antonioribeiro/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/antonioribeiro/perl5"; export PERL_MM_OPT;
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+
+export COMPOSER_MEMORY_LIMIT=-1
+
+alias mtr="sudo /usr/local/sbin/mtr"
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+export ARTISAN_OPEN_ON_MAKE_EDITOR='open -na "PhpStorm.app" '
