@@ -1,6 +1,8 @@
 [user]
 	email = antonio@area17.com
 	name = Antonio Ribeiro
+
+	## Configure GPG: https://gist.github.com/danieleggert/b029d44d4a54b328c0bac65d46ba4c65
 	signingkey = 7A0902B87DA85F5A79149B081F0AE876BD1569EA
 
 [alias]
