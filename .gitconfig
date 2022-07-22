@@ -1,6 +1,7 @@
 [user]
 	email = antonio@area17.com
 	name = Antonio Ribeiro
+	signingkey = 7A0902B87DA85F5A79149B081F0AE876BD1569EA
 
 [alias]
 
@@ -213,5 +214,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
     required = true
+
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg2
 
 
