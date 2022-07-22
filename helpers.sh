@@ -257,7 +257,7 @@ function brew_cask_install()
 
     echo_info "Installing cask $1..."
      
-    if brew cask ls --versions $1 > /dev/null
+    if brew ls --cask --versions | grep $1 > /dev/null
     then
         echo_success "Cask '$1' is already installed."
 
@@ -273,7 +273,7 @@ function brew_cask_install()
         _SUBCOMMAND=install
     fi
 
-    execute brew cask $_SUBCOMMAND $1
+    execute brew $_SUBCOMMAND $1 --cask 
 }
 
 function php_exec()
@@ -311,9 +311,9 @@ function pecl_install()
 
     sudo_warning "Installing pecl packages"
 
-    echo_comment "> sudo pecl install $_PACKAGE"
+    echo_comment "> pecl install $_PACKAGE"
     
-    printf "\n" | sudo pecl install $_PACKAGE > $_OUTPUT_FILE 2> $_ERROR_FILE
+    printf "\n" | pecl install $_PACKAGE > $_OUTPUT_FILE 2> $_ERROR_FILE
 
     check_errors    
 

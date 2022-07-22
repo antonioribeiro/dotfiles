@@ -30,7 +30,7 @@ function install
 
     install_yarn_prefs
 
-    # install_ohmyzsh_themes ### looks line this one is not working anymore
+    install_ohmyzsh_themes ### looks line this one is not working anymore
 
     install_powerline_fonts ### looks like the current fix for oh my zsh fonts
     
@@ -58,10 +58,12 @@ function install
 
     install_pecl_packages
 
-    install_docker
-    
+    #install_docker
+
+    install_inputrc
+
     create_shortcuts
-    
+
     fix_file_permissions
 
     display_instructions    

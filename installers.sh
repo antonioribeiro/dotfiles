@@ -29,9 +29,11 @@ function install_homebrew()
         [ "$_FATAL_ERROR" = "YES" ] && return 0
     fi
 
-    echo_comment "> ruby install brew"
+    # sudo xcode-select --install
 
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
     check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
 
@@ -494,6 +496,8 @@ function install_pecl_packages()
 
 function create_shortcuts()
 {
+    mkdir -p $HOME/bin
+
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     _SUBLIME="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
@@ -501,8 +505,11 @@ function create_shortcuts()
     if [ -f "$_SUBLIME" ] && [ ! -f /usr/local/bin/subl ]
     then
         echo_comment "Creating Sublime Text links..."
-        link "$_SUBLIME" /usr/local/bin/subl
-        link "$_SUBLIME" /usr/local/bin/sublime
+        \rm $HOME/subl
+        \rm $HOME/sublime
+
+        link "$_SUBLIME" $HOME/subl
+        link "$_SUBLIME" $HOME/sublime
     fi
 }
 
@@ -528,4 +535,11 @@ function install_docker()
     check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     execute docker-machine stop default
+}
+
+function install_inputrc()
+{
+    \rm $HOME/.inputrc
+
+    execute ln -s $_DOTFILES_ROOT/.inputrc $HOME/.inputrc
 }
