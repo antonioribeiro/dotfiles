@@ -474,3 +474,9 @@ for app in "cfprefsd" "Dock" "Finder" "Mail" "SystemUIServer" "Terminal"; do
 done
 
 echo "Please log out and log back in to make all settings take effect."
+
+###############################################################################
+# Dark Mode                                                                   #
+###############################################################################
+osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
+

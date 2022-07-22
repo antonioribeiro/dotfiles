@@ -60,7 +60,13 @@ function install
 
     #install_docker
 
-    install_inputrc
+    configure_input
+
+    configure_curl
+
+    configure_gitconfig
+
+    configure_wget
 
     create_shortcuts
 

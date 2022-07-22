@@ -539,9 +539,30 @@ function install_docker()
     execute docker-machine stop default
 }
 
-function install_inputrc()
+function configure_input()
 {
     \rm $HOME/.inputrc
 
     execute ln -s $_DOTFILES_ROOT/.inputrc $HOME/.inputrc
+}
+
+function configure_curl()
+{
+    \rm $HOME/.curlrc
+
+    execute ln -s $_DOTFILES_ROOT/.curlrc $HOME/.curlrc
+}
+
+function configure_gitconfig()
+{
+    \rm $HOME/.gitconfig
+
+    execute ln -s $_DOTFILES_ROOT/.gitconfig $HOME/.gitconfig
+}
+
+function configure_wget()
+{
+    \rm $HOME/.wgetrc
+
+    execute ln -s $_DOTFILES_ROOT/.wgetrc $HOME/.wgetrc
 }

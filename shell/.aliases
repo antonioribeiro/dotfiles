@@ -238,7 +238,7 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias ls='sudo \ls -laFG'
 
 # List all files colorized in long format
-alias l="ls -lF ${colorflag}"
+alias l="ls -lFA ${colorflag}"
 
 # List all files colorized in long format, excluding . and ..
 alias la="ls -lAF ${colorflag}"

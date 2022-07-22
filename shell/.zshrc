@@ -2,6 +2,7 @@
 
 source $HOME/.dotfiles/environment.defaults.sh
 source $HOME/.dotfiles/environment.sh
+source $HOME/.dotfiles/.exports
 
 ZSH=$HOME/.oh-my-zsh
 
@@ -17,11 +18,6 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git laravel4 laravel5 composer osx vagrant)
-
-PATH="/Users/antonioribeiro/perl5/bin${PATH:+:${PATH}}:/Users/antonioribeiro/.nvm:/Users/antonioribeiro/bin"
-PATH="/System/Volumes/Data/opt/homebrew/bin:${PATH}"
-
-export PATH;
 
 source $ZSH/oh-my-zsh.sh
 
@@ -73,8 +69,9 @@ eval "$(hub alias -s)"
 ssh-add -A 2>/dev/null;
 
 # Enable autosuggestions
-source /System/Volumes/Data/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+PATH="/Users/antonioribeiro/perl5/bin${PATH:+:${PATH}}:/Users/antonioribeiro/.nvm:/Users/antonioribeiro/bin"; export PATH;
 PERL5LIB="/Users/antonioribeiro/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/Users/antonioribeiro/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/Users/antonioribeiro/perl5\""; export PERL_MB_OPT;
@@ -82,7 +79,6 @@ PERL_MM_OPT="INSTALL_BASE=/Users/antonioribeiro/perl5"; export PERL_MM_OPT;
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-
 
 export COMPOSER_MEMORY_LIMIT=-1
 
