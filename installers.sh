@@ -292,9 +292,11 @@ function install_composer()
 
     execute mv composer.phar $_COMPOSER_EXECUTABLE
 
-    echo_info "Configure Composer Github token"
+    if [ $___GITHUB_TOKEN___ != "" ]; then
+        echo_info "Configure Composer Github token"
 
-    execute composer config --global github-oauth.github.com $___GITHUB_TOKEN___
+        execute composer config --global github-oauth.github.com $___GITHUB_TOKEN___
+    fi
 
     if command -v composer > /dev/null
     then 
