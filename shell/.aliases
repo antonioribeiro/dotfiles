@@ -170,25 +170,6 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-
-############################################################
-####
-####  Apt (Debian / Ubuntu)
-####
-
-alias apt-get="sudo apt-get"
-alias updatey="sudo apt-get --yes"
-alias ag="sudo apt-get"
-alias agi="sudo apt-get install"
-alias agiy="sudo apt-get --yes install"
-alias agu="sudo apt-get update"
-alias acs="sudo apt-cache search"
-alias ags=acs                          # sometimes apt-get search is just easier to remember :)
-alias acsh='sudo apt-cache show'
-alias afs='sudo apt-file show'
-alias afl='sudo apt-file list'
-alias upgrade='sudo apt-get update && sudo apt-get upgrade'
-
 ############################################################
 ####
 ####  Reboot / Shutdown
@@ -462,6 +443,14 @@ alias code='open -a "/Applications/Visual Studio Code.app" "`pwd`"'
 ####
 
 alias mtr="sudo /usr/local/sbin/mtr"
+
+############################################################
+####
+####  find / The Silver Searcher / ag
+####
+
+alias f="sudo ag -suf "
+alias fc="sudo ag -csuf "
 
 ############################################################
 ####
