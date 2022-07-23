@@ -63,10 +63,7 @@ export _INSTALL_DOCKER=YES
 # Hide username in prompt
 DEFAULT_USER=`whoami`
 
-export PATH="$PATH:$HOME/.rvm/bin"
-
 NPM_PACKAGES="${HOME}/.npm-packages"
-export PATH="$NPM_PACKAGES/bin:$PATH"
 
 # Sudoless npm https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
 # Unset manpath so we can inherit from /etc/manpath via the `manpath`
@@ -74,15 +71,5 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-export PATH=$HOME/.dotfiles/bin:$PATH
-
 # Setup xdebug
 export XDEBUG_CONFIG="idekey=$_XDEBUG_IDE_KEY"
-
-# Extra paths
-export PATH=Users/$DEFAULT_USER/.rvm/gems/ruby-2.1.2/bin:$PATH
-export PATH="$HOME/.composer/vendor/bin:$PATH"
-export PATH=/usr/local/bin:$PATH
-export PATH="$HOME/.yarn/bin:$PATH"
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-export PATH="/usr/local/opt/node@8/bin:$PATH"

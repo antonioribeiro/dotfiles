@@ -433,8 +433,6 @@ alias less='less -r'
 alias fuck='sudo $(history -p \!\!)'
 
 
-
-
 ############################################################
 ####
 ####  JavaScript
@@ -457,6 +455,13 @@ alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
 
 # VSCode
 alias code='open -a "/Applications/Visual Studio Code.app" "`pwd`"'
+
+############################################################
+####
+####  mtr
+####
+
+alias mtr="sudo /usr/local/sbin/mtr"
 
 ############################################################
 ####

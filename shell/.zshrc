@@ -8,6 +8,8 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_CUSTOM=$_DOTFILES_ROOT/misc/oh-my-zsh-custom
 
+source $_DOTFILES_ROOT/paths.sh
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -20,6 +22,9 @@ ZSH_THEME="agnoster"
 plugins=(git laravel4 laravel5 composer osx vagrant)
 
 source $ZSH/oh-my-zsh.sh
+
+# Enable autosuggestions
+source /System/Volumes/Data/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 #set numeric keys
 # 0 . Enter
@@ -63,15 +68,9 @@ source /opt/homebrew/etc/profile.d/z.sh
 # Alias hub to git
 eval "$(hub alias -s)"
 
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-
 # Import ssh keys in keychain
 ssh-add -A 2>/dev/null;
 
-# Enable autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-PATH="/Users/antonioribeiro/perl5/bin${PATH:+:${PATH}}:/Users/antonioribeiro/.nvm:/Users/antonioribeiro/bin"; export PATH;
 PERL5LIB="/Users/antonioribeiro/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/Users/antonioribeiro/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/Users/antonioribeiro/perl5\""; export PERL_MB_OPT;
@@ -81,8 +80,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 export COMPOSER_MEMORY_LIMIT=-1
-
-alias mtr="sudo /usr/local/sbin/mtr"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

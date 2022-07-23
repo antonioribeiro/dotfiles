@@ -364,13 +364,6 @@ function check_variables()
     done
 }
 
-
-function add_composer_to_path()
-{
-    export PATH="$_COMPOSER_BIN:$PATH"
-}
-
-
 function npm_install()
 {
     [ "$_FATAL_ERROR" = "YES" ] && return 0
