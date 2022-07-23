@@ -73,3 +73,5 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 # Setup xdebug
 export XDEBUG_CONFIG="idekey=$_XDEBUG_IDE_KEY"
+
+source $_DOTFILES_ROOT/paths.sh

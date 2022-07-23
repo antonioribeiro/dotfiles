@@ -8,8 +8,6 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_CUSTOM=$_DOTFILES_ROOT/misc/oh-my-zsh-custom
 
-source $_DOTFILES_ROOT/paths.sh
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
