@@ -18,6 +18,7 @@ exiv2
 fcrackzip
 findutils
 foremost
+ffmpeg
 ghostscript
 git
 git-delta
@@ -82,3 +83,6 @@ yarn
 z
 zopfli
 zsh-autosuggestions
+neofetch
+speedtest-cli
+
