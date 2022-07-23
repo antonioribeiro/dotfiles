@@ -4,6 +4,7 @@ autoconf
 awscli
 bash
 bash-completion@2
+bat
 bfg
 binutils
 binwalk

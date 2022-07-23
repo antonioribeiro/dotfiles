@@ -480,15 +480,6 @@ alias vpn-ny-down="wg-quick down ~/.config/wireguard/a17-nyc-vpn.conf"
 alias v="php artisan version"
 alias va="php artisan version:absorb"
 
-
-
-
-
-
-
-
-
-
 # Shortcuts
 alias g="git"
 
@@ -500,7 +491,6 @@ else # macOS `ls`
     colorflag="-G"
     export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
-
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
@@ -609,3 +599,8 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# Use bat instead of cat
+
+alias cat="bat "
+alias cata="bat -A "
