@@ -5,6 +5,9 @@
 	## Configure GPG: https://gist.github.com/danieleggert/b029d44d4a54b328c0bac65d46ba4c65
 	signingkey = 7A0902B87DA85F5A79149B081F0AE876BD1569EA
 
+[core]
+    pager = delta
+
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
@@ -143,7 +146,7 @@
 [color "status"]
 
 	added = yellow
-	changed = green
+	changed = red
 	untracked = cyan
 
 [commit]
@@ -221,3 +224,18 @@
 	program = /usr/local/MacGPG2/bin/gpg2
 
 
+[interactive]
+    diffFilter = delta --color-only
+
+[add.interactive]
+    useBuiltin = false # required for git 2.37.0
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default

@@ -511,7 +511,7 @@ function install_docker()
 
     check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
 
-    execute docker-machine stop default
+    execute docker-machine stop default2
 }
 
 function configure_input()

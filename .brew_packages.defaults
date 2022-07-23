@@ -21,6 +21,7 @@ foremost
 ghostscript
 git
 git-lfs
+git-delta
 gmp
 gnu-sed
 gnupg

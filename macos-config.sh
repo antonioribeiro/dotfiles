@@ -56,7 +56,7 @@ sudo systemsetup -setrestartfreeze on
 # launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && open /System/Library/CoreServices/NotificationCenter.app/
 
 # Disable game center. Who uses that thing?
-# launchctl unload /System/Library/LaunchAgents/com.apple.gamed.plist 2> /dev/null
+launchctl unload /System/Library/LaunchAgents/com.apple.gamed.plist 2> /dev/null
 
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -89,8 +89,10 @@ sudo pmset -a hibernatemode 0
 
 # Remove the sleep image file to save disk space
 [ -e /Private/var/vm/sleepimage ] && sudo rm -f /Private/var/vm/sleepimage
+
 # Create a zero-byte file instead...
 sudo touch /Private/var/vm/sleepimage
+
 # ...and make sure it can’t be rewritten
 sudo chflags uchg /Private/var/vm/sleepimage
 
@@ -109,7 +111,7 @@ defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClic
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 # Increase sound quality for Bluetooth headphones/headsets
-# defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs - 0 = text boxes and lists, 2/3 = all controls)

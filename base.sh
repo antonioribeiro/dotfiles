@@ -24,8 +24,6 @@ function install
 
     install_ohmyzsh
 
-    install_global_gitignore
-
     install_vim_prefs
 
     install_yarn_prefs
