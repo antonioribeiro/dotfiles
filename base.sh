@@ -10,65 +10,67 @@ function install
 
     check_variables
 
-    # configure_macos
+    configure_macos
 
-    # configure_git
+    configure_git
 
-    # install_homebrew
+    install_homebrew
 
-    # install_hushlogin
+    install_hushlogin
 
-    # install_brew_packages
+    install_brew_packages
 
-    # install_brew_cask_packages
+    install_brew_tap_repositories
 
-    # install_ohmyzsh
+    install_brew_cask_packages
 
-    # install_vim_prefs
+    install_ohmyzsh
 
-    # install_yarn_prefs
+    install_vim_prefs
 
-    # install_ohmyzsh_themes ### looks line this one is not working anymore
+    install_yarn_prefs
 
-    # install_powerline_fonts ### looks like the current fix for oh my zsh fonts
+    install_ohmyzsh_themes ### looks line this one is not working anymore
+
+    install_powerline_fonts ### looks like the current fix for oh my zsh fonts
     
-    # install_php
+    install_php
 
-    # install_composer
+    install_composer
 
-    # install_postgresql
+    install_postgresql
 
-    # install_mysql
+    install_mysql
 
-    # install_mackup
+    install_mackup
 
-    # install_zsh_autosuggestions
+    install_zsh_autosuggestions
     
-    # install_xcode_select
+    install_xcode_select
 
-    # install_php_pear
+    install_php_pear
 
-    # install_laravel_valet
+    install_laravel_valet
 
-    # install_composer_packages
+    install_composer_packages
 
     install_npm_packages
 
     install_pecl_packages
 
-    #install_docker
+    install_docker
 
-    # configure_input
+    configure_input
 
-    # configure_curl
+    configure_curl
 
-    # configure_git
+    configure_git
 
-    # configure_wget
+    configure_wget
 
-    # create_shortcuts
+    create_shortcuts
 
-    # fix_file_permissions
+    fix_file_permissions
 
     display_instructions    
 

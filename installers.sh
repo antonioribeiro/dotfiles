@@ -543,3 +543,8 @@ function configure_wget()
 
     execute ln -s $_DOTFILES_ROOT/.wgetrc $HOME/.wgetrc
 }
+
+function install_brew_tap_repositories()
+{
+    install_all_packages $_INSTALL_BREW_CASK_PACKAGES "brew tap" ".brew_tap_repositories" brew_tap_install
+}

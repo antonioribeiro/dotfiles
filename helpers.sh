@@ -249,6 +249,33 @@ function brew_install()
     execute brew $_SUBCOMMAND $1
 }
 
+function brew_tap_install()
+{
+    [ "$_FATAL_ERROR" = "YES" ] && return 0
+
+    update_homebrew
+
+    echo_info "Installing tap $1..."
+     
+    if brew tap | grep $1 > /dev/null
+    then
+        echo_success "Tap '$1' is already installed."
+
+        _SUBCOMMAND=reinstall
+
+        if [ "$_BREW_REINSTALL_ALL_PACKAGES" != "YES" ] 
+        then 
+            echo
+
+            return 0
+        fi
+    else
+        _SUBCOMMAND=install
+    fi
+
+    execute brew tap $1
+}
+
 function brew_cask_install()
 {
     [ "$_FATAL_ERROR" = "YES" ] && return 0
