@@ -77,31 +77,6 @@ function install_ohmyzsh()
     install_zsh_prefs
 }
 
-
-function install_global_gitignore()
-{
-    [ "$_INSTALL_HUSHLOGIN" != "YES" ] && return 0
-
-    [ "$_FATAL_ERROR" = "YES" ] && return 0
-
-    # Add global gitignore
-
-    delete_if_exists $HOME/.global-gitignore
-
-    [ "$_FATAL_ERROR" = "YES" ] && return 0
-
-    echo_info 'Linking global-gitignore...'
-
-    execute ln -s $_DOTFILES_ROOT/shell/.global-gitignore $HOME/.global-gitignore
-
-    [ "$_FATAL_ERROR" = "YES" ] && return 0
-
-    echo_info "Configuring git global-gitignore..."
-
-    execute git config --global core.excludesfile $HOME/.global-gitignore
-}
-
-
 function install_zsh_prefs() 
 {
     [ "$_FATAL_ERROR" = "YES" ] && return 0
@@ -553,11 +528,13 @@ function configure_curl()
     execute ln -s $_DOTFILES_ROOT/.curlrc $HOME/.curlrc
 }
 
-function configure_gitconfig()
+function configure_git()
 {
     \rm $HOME/.gitconfig
 
     execute ln -s $_DOTFILES_ROOT/.gitconfig $HOME/.gitconfig
+
+    execute ln -s $_DOTFILES_ROOT/.gitignore $HOME/.gitignore
 }
 
 function configure_wget()

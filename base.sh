@@ -10,7 +10,7 @@ function install
 
     check_variables
 
-    # configure_macos
+    configure_macos
 
     configure_git
 
@@ -64,7 +64,7 @@ function install
 
     configure_curl
 
-    configure_gitconfig
+    configure_git
 
     configure_wget
 
