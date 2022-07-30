@@ -1,7 +1,9 @@
+
 ack
 aircrack-ng
 autoconf
 awscli
+bash
 bash
 bash-completion@2
 bat
@@ -16,9 +18,9 @@ dnsmasq
 doctl
 exiv2
 fcrackzip
+ffmpeg
 findutils
 foremost
-ffmpeg
 ghostscript
 git
 git-delta
@@ -40,8 +42,10 @@ jq
 knock
 lua
 lynx
+mailhog
 moreutils
 ncdu
+neofetch
 netpbm
 nginx
 nmap
@@ -62,6 +66,7 @@ screen
 sfnt2woff
 sfnt2woff-zopfli
 socat
+speedtest-cli
 sqlmap
 ssh-copy-id
 tcpflow
@@ -76,6 +81,7 @@ vbindiff
 vim
 wget
 wget
+wireguard-tools
 woff2
 xpdf
 xz
@@ -83,6 +89,3 @@ yarn
 z
 zopfli
 zsh-autosuggestions
-neofetch
-speedtest-cli
-

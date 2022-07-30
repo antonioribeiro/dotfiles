@@ -599,3 +599,5 @@ alias path='echo -e ${PATH//:/\\n}'
 
 alias cat="bat "
 alias cata="bat -A "
+
+alias corinna="ssh forge@67.205.143.231"

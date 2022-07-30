@@ -83,3 +83,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 export ARTISAN_OPEN_ON_MAKE_EDITOR='open -na "PhpStorm.app" '
+
+launchctl unload -w {,~}/Library/LaunchAgents/com.adobe.*.plist
