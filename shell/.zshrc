@@ -1,5 +1,7 @@
 # Path to your oh-my-zsh configuration.
 
+echo "Loading .zhrc..."
+
 source $HOME/.dotfiles/environment.defaults.sh
 source $HOME/.dotfiles/environment.sh
 source $HOME/.dotfiles/.exports
@@ -17,7 +19,7 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git laravel4 laravel5 composer osx vagrant)
+plugins=(git laravel5 composer z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -61,7 +63,7 @@ unset file
 # Load rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
-source /opt/homebrew/etc/profile.d/z.sh
+# source /opt/homebrew/etc/profile.d/z.sh
 
 # Alias hub to git
 eval "$(hub alias -s)"
@@ -84,4 +86,24 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 export ARTISAN_OPEN_ON_MAKE_EDITOR='open -na "PhpStorm.app" '
 
-launchctl unload -w {,~}/Library/LaunchAgents/com.adobe.*.plist
+## Stop Adobe Cloud from restarting after reboot
+## launchctl unload -w {,~}/Library/LaunchAgents/com.adobe.*.plist -- this is not working
+
+## mkdir -p /usr/local/bin
+## ln -sf /System/Volumes/Data/opt/homebrew/bin/php /usr/local/bin/php --- NEEDS TO BE ROOT?
+## ln -sf /System/Volumes/Data/opt/homebrew/bin/node /usr/local/bin/node
+
+mkdir -p ~/.nvm
+
+## zplug
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
+source $ZPLUG_HOME/init.zsh
+zplug "lib/*",   from:oh-my-zsh
+
+
+zstyle ':completion:*' menu select
+
+#Fix PostgreSQL for Laravel Valet
+PGGSSENCMODE=disable
+
+

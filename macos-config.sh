@@ -101,6 +101,14 @@ sudo pmset -a sms 0
 
 
 ###############################################################################
+# Mission Control Spaces                                                      #
+###############################################################################
+
+# Disable rearranging workspaces based on usage
+defaults write com.apple.dock mru-spaces -bool false
+
+
+###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
@@ -273,14 +281,17 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 
+# Position dock
+defaults write com.apple.dock "orientation" -string "left" && killall Dock
+
 # Set the icon size of Dock items
-# defaults write com.apple.dock tilesize -int 60
+defaults write com.apple.dock tilesize -int 60
 
 # Enable spring loading for all Dock items
-# defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
+defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
 # Don’t animate opening applications from the Dock
-# defaults write com.apple.dock launchanim -bool false
+defaults write com.apple.dock launchanim -bool false
 
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.15
@@ -290,9 +301,9 @@ defaults write com.apple.dock expose-animation-duration -float 0.15
 # defaults write com.apple.dock expose-group-by-app -bool false
 
 # Remove the auto-hiding Dock delay
-# defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
-# defaults write com.apple.dock autohide-time-modifier -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
@@ -333,6 +344,11 @@ fi
 # Move Dock to the right side
 # defaults write com.apple.Dock orientation -string bottom
 
+# Disable them all
+defaults write com.apple.dock wvous-tl-corner -int 0
+defaults write com.apple.dock wvous-tr-corner -int 0
+defaults write com.apple.dock wvous-bl-corner -int 0
+defaults write com.apple.dock wvous-br-corner -int 0
 
 ###############################################################################
 # Safari & WebKit                                                             #

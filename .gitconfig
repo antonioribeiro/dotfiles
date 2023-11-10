@@ -236,6 +236,7 @@
 
 [merge]
     conflictstyle = diff3
+    ff = no
 
 [diff]
     colorMoved = default

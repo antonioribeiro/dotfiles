@@ -89,8 +89,7 @@ alias gcm='git commit -m'
 alias gco='git checkout'
 alias gcob='git checkout -b '
 alias gcp='git cherry-pick'
-alias gd='git diff'
-alias gd='git delta'
+alias gd='git diff '
 alias gdc='git diff --cached'
 alias gf='git fetch --all'
 alias gl='git log'
@@ -367,6 +366,7 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 ####
 
 alias c="composer"
+alias c1="composer1"
 alias cda="composer dump-autoload"
 alias cdo="composer dump-autoload --optimize"
 alias cu="composer update"
@@ -463,6 +463,8 @@ alias flush-redis="redis-cli FLUSHALL"
 alias drush="vendor/bin/drush"
 alias drupal="vendor/bin/drupal"
 
+alias vpn=vpn-paris
+alias down="vpn-paris-down; vpn-ny-down"
 alias vpn-paris="wg-quick up ~/.config/wireguard/a17-paris-vpn.conf"
 alias vpn-paris-up="wg-quick up ~/.config/wireguard/a17-paris-vpn.conf"
 alias vpn-paris-down="wg-quick down ~/.config/wireguard/a17-paris-vpn.conf"
@@ -473,7 +475,10 @@ alias vpn-ny="wg-quick up ~/.config/wireguard/a17-nyc-vpn.conf"
 alias vpn-ny-up="wg-quick up ~/.config/wireguard/a17-nyc-vpn.conf"
 alias vpn-ny-down="wg-quick down ~/.config/wireguard/a17-nyc-vpn.conf"
 alias v="php artisan version"
-alias va="php artisan version:absorb"
+
+
+alias va="valet php artisan "
+alias vc="valet composer "
 
 # Shortcuts
 alias g="git"
@@ -532,7 +537,7 @@ jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources
 unset jscbin;
 
 # Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
+# alias c="tr -d '\n' | pbcopy"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"

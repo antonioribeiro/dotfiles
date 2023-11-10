@@ -59,7 +59,13 @@ flv_website_dev.*
 flv_website_staging.*
 ___notes.md
 __notes.md
+__api.http
 /Users/antonioribeiro/code/accor/extstay/package.json
 *.pem%
 
-
+phpstan.log
+t
+tt
+ttt
+options.prop
+public/assets/admin

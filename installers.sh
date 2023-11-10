@@ -232,6 +232,7 @@ function install_php()
     brew_install php@7.4
 
     echo_info 'Link PHP 7.4'
+
     execute brew link --force --overwrite php@7.4
 }
 
