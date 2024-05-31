@@ -106,4 +106,8 @@ zstyle ':completion:*' menu select
 #Fix PostgreSQL for Laravel Valet
 PGGSSENCMODE=disable
 
+export NODE_ENV=local export PATH="/usr/local/opt/libpq/bin:$PATH"
 
+export PATH="/usr/local/go/bin:$PATH"
+
+source <(fzf --zsh)

@@ -44,3 +44,4 @@ export NVM_DIR="$HOME/.nvm"
 ## Homebrew
 export PATH="/opt/homebrew/sbin:/opt/homebrew/bin:$PATH"
 
+export PATH="$PATH:/opt/homebrew/Cellar/postgresql@15/15.6_1/bin"

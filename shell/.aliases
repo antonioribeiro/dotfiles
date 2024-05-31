@@ -59,7 +59,7 @@ alias .5='cd ../../../../..'
 ####  PHPUnit
 ####
 
-alias t="clear; php -d memory_limit=4G vendor/bin/phpunit"
+alias t="clear; XDEBUG_MODE=coverage php -d memory_limit=4G vendor/bin/phpunit"
 alias phpunit="vendor/bin/phpunit"
 alias phpunitw="phpunit-watcher watch"
 alias p="phpunit"
@@ -114,6 +114,17 @@ alias gamend='git commit -a --amend'
 alias gwipe="git add -A ; git commit -qm 'WIPE SAVEPOINT' ; git reset HEAD~1 --hard"
 alias gconf="ed .git/config"
 
+# Git merge into
+function gminto() 
+{
+    set -x 
+    _CURRENT_BRANCH=$(git symbolic-ref --short HEAD) && \
+    git checkout $1 && \
+    git pull 
+    git merge --no-ff $_CURRENT_BRANCH
+}
+
+
 # remove files that are not under version control
 alias gcf="git clean -f"
 
@@ -165,9 +176,9 @@ alias cp='cp -i'
 alias ln='ln -i'
 
 # Parenting changing perms on / #
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
+alias chown='chown '
+alias chmod='chmod '
+alias chgrp='chgrp '
 
 ############################################################
 ####
@@ -425,6 +436,7 @@ alias jest="./node_modules/.bin/jest"
 # Switch NPM
 alias npmnpm="npm config set registry https://registry.npmjs.org"
 alias npmspatie="npm config set registry https://npm.spatie.be"
+alias npn="npm "
 
 ############################################################
 ####
@@ -606,3 +618,6 @@ alias cat="bat "
 alias cata="bat -A "
 
 alias corinna="ssh forge@67.205.143.231"
+
+# NMAP
+alias scan-ports="nmap -sC -sV -oN nmap"

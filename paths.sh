@@ -3,7 +3,7 @@
 PATH="${PATH}:/usr/local/bin"
 PATH="${PATH}:$HOME/bin"
 PATH="${PATH}:/System/Volumes/Data/opt/homebrew/bin"
-PATH="${PATH}:/System/Volumes/Data/opt/homebrew/Cellar/postgresql@15/15.4/bin"
+PATH="${PATH}:/System/Volumes/Data/opt/homebrew/Cellar/postgresql@15/15.5_1/bin"
 PATH="${PATH}:$HOME/perl5/bin"
 PATH="${PATH}:$HOME/.nvm"
 PATH="${PATH}:$HOME/.rvm/bin"
