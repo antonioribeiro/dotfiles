@@ -103,6 +103,9 @@ zplug "lib/*",   from:oh-my-zsh
 
 zstyle ':completion:*' menu select
 
+# Starship Cursors
+eval "$(starship init zsh)"
+
 #Fix PostgreSQL for Laravel Valet
 PGGSSENCMODE=disable
 
@@ -111,3 +114,26 @@ export NODE_ENV=local export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 
 source <(fzf --zsh)
+
+echo "source /Users/antonioribeiro/.config/op/plugins.sh"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+. "$HOME/.local/bin/env"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"

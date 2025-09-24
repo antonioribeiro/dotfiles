@@ -71,3 +71,5 @@ ttt
 options.prop
 public/assets/admin
 .phpactor.json
+
+.phpunit.cache/

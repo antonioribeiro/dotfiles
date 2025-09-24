@@ -113,6 +113,7 @@ alias gundo='reset HEAD~1 --mixed'
 alias gamend='git commit -a --amend'
 alias gwipe="git add -A ; git commit -qm 'WIPE SAVEPOINT' ; git reset HEAD~1 --hard"
 alias gconf="ed .git/config"
+alias gpl="git pull"
 
 # Git merge into
 function gminto() 
@@ -621,3 +622,6 @@ alias corinna="ssh forge@67.205.143.231"
 
 # NMAP
 alias scan-ports="nmap -sC -sV -oN nmap"
+
+# Shutdown machines
+ssh antonioribeiro@"old-antonio iMac" 'sudo shutdown -h now'
