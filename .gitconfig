@@ -3,7 +3,7 @@
 	name = Antonio Ribeiro
 
 	## Configure GPG: https://gist.github.com/danieleggert/b029d44d4a54b328c0bac65d46ba4c65
-	signingkey = 7A0902B87DA85F5A79149B081F0AE876BD1569EA
+	signingkey =
 
 [core]
     pager = delta
@@ -102,7 +102,7 @@
 [core]
 
 	# Use custom `.gitignore` and `.gitattributes`.
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/antonioribeiro/.gitignore_global
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error.
@@ -123,6 +123,7 @@
 	untrackedCache = true
 
 	editor = 'joe' -n -w
+	autocrlf = false
 
 [color]
 
@@ -221,8 +222,7 @@
     required = true
 
 [gpg]
-	program = /usr/local/MacGPG2/bin/gpg2
-
+	program = /opt/homebrew/bin/gpg
 
 [interactive]
     diffFilter = delta --color-only
@@ -240,3 +240,14 @@
 
 [diff]
     colorMoved = default
+
+[credential "https://lpl-sources@dev.azure.com/lpl-sources/FSH%20Division/_git/19M-APP"]
+    username = antonio.ribeiro
+    password =
+
+[credential "https://lpl-sources@dev.azure.com/lpl-sources/FSH%20Division/_git/infra-FASHION-19M"]
+    username = antonio.ribeiro
+    password =
+
+#[credential]
+#	helper = manager-core
