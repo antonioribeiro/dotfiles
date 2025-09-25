@@ -624,4 +624,4 @@ alias corinna="ssh forge@67.205.143.231"
 alias scan-ports="nmap -sC -sV -oN nmap"
 
 # Shutdown machines
-ssh antonioribeiro@"old-antonio iMac" 'sudo shutdown -h now'
+# ssh antonioribeiro@"old-antonio iMac" 'sudo shutdown -h now'

@@ -251,9 +251,9 @@ function install_composer()
 
     php_exec "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 
-    _MD5=`md5 -q composer-setup.php`
+    _SHA384=`sha384 -q composer-setup.php`
 
-    if [ "$_MD5" != "94ba596cb59085f4b8036863c4a6b237" ]
+    if [ "$_SHA384" != "ed0feb545ba87161262f2d45a633e34f591ebb3381f2e0063c345ebea4d228dd0043083717770234ec00c5a9f9593792" ]
     then
         set_error "composer-setup.php file's MD5 does not match 94ba596cb59085f4b8036863c4a6b237"
 
@@ -266,7 +266,7 @@ function install_composer()
 
     delete_if_exists $_COMPOSER_EXECUTABLE
 
-    execute mv composer.phar $_COMPOSER_EXECUTABLE
+    execute_sudo mv composer.phar $_COMPOSER_EXECUTABLE
 
     if [ $___GITHUB_TOKEN___ != "" ]; then
         echo_info "Configure Composer Github token"
@@ -527,15 +527,6 @@ function configure_curl()
     \rm $HOME/.curlrc
 
     execute ln -s $_DOTFILES_ROOT/.curlrc $HOME/.curlrc
-}
-
-function configure_git()
-{
-    \rm $HOME/.gitconfig
-
-    execute ln -s $_DOTFILES_ROOT/.gitconfig $HOME/.gitconfig
-
-    execute ln -s $_DOTFILES_ROOT/.gitignore $HOME/.gitignore
 }
 
 function configure_wget()

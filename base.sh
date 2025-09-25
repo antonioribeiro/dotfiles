@@ -1,26 +1,39 @@
 #!/bin/bash
 
+# set -x # enable bash full execution log
+
 #---
 # Keep this file clean to avoid genral failures
 #---
 
 function install
 {
-    sudo -v #ask password beforehand
-
     check_variables
 
-    configure_macos
+    if [ "$_FATAL_ERROR" = "YES" ]
+    then
+        return 1
+    fi
 
-    configure_git
+    configure_environment
+
+    if [ $? -ne 0 ] || [ "$_FATAL_ERROR" = "YES" ]
+    then
+        display_errors
+        return 1
+    fi
+
+    sudo -v #ask password beforehand
+
+    configure_macos
 
     install_homebrew
 
     install_hushlogin
 
-    install_brew_packages
-
     install_brew_tap_repositories
+
+    install_brew_packages
 
     install_brew_cask_packages
 
@@ -33,7 +46,7 @@ function install
     install_ohmyzsh_themes ### looks line this one is not working anymore
 
     install_powerline_fonts ### looks like the current fix for oh my zsh fonts
-    
+
     install_php
 
     install_composer
@@ -45,10 +58,10 @@ function install
     install_mackup
 
     install_zsh_autosuggestions
-    
+
     install_xcode_select
 
-    install_php_pear
+    #install_php_pear
 
     install_laravel_valet
 
@@ -56,9 +69,9 @@ function install
 
     install_npm_packages
 
-    install_pecl_packages
+    #install_pecl_packages
 
-    install_docker
+    #install_docker
 
     configure_input
 
@@ -85,7 +98,9 @@ function configure_environment()
     source environment.sh 2>/dev/null
 
     initialize_output_files
+
     check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
+
 
     source helpers.sh
     check_errors; [ "$_FATAL_ERROR" = "YES" ] && return 0
@@ -186,4 +201,4 @@ function run_installer
     $INSTALLER
 }
 
-configure_environment
+

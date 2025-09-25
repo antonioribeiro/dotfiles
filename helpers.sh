@@ -372,23 +372,32 @@ function composer_install()
     execute composer global require $_PACKAGE
 }
 
-
 function check_variables()
 {
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     names=(___HOSTNAME___ ___USERNAME___ ___USERGROUP___ ___NAME___ ___EMAIL___ ___MYSQL_NAME___ ___MYSQL_VERSION___ ___GITHUB_TOKEN___)
-    
+
+    local missing_vars=()
+
     for _VAR_NAME in "${names[@]}"
     do
-        _VAR_NAME="${_VAR_NAME}"
-        _VALUE=${!_VAR_NAME}
+        echo ${_VAR_NAME}="${!_VAR_NAME}"
 
-        if [ "$_VALUE" = "" ]
+        local _VALUE="${!_VAR_NAME}"
+
+        if [ -z "$_VALUE" ]
         then
-            set_error "The variable '$_VAR_NAME' was not set. Please check the config.dewfaults.sh file."
+            missing_vars+=("$_VAR_NAME")
         fi            
     done
+
+    if [ ${#missing_vars[@]} -gt 0 ]
+    then
+        set_error "Mandatory environment variables are missing: ${missing_vars[*]}"
+        echo_error "Please export the variables above in environment.sh before rerunning bootstrap."
+        return 1
+    fi
 }
 
 function npm_install()

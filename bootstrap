@@ -21,6 +21,7 @@ read -p 'Answer: '  reply
 if [[ $reply =~ ^[Yy]$ ]] || [[ "$reply" = "yes" ]] || [[ "$reply" = "YES" ]]
 then
 	source ~/.dotfiles/base.sh
+	source ~/.dotfiles/helpers.sh
 
 	install
 fi

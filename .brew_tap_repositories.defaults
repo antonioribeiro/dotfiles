@@ -1,5 +1,6 @@
-homebrew/cask
-homebrew/cask-drivers
-homebrew/cask-fonts
-homebrew/cask-versions
-
+brew tap aquasecurity/trivy
+brew tap bramstein/webfonttools
+brew tap nicoverbruggen/cask
+brew tap shivammathur/extensions
+brew tap shivammathur/php
+brew tap teamookla/speedtest

@@ -31,6 +31,10 @@ git config --global core.excludesfile ~/.gitignore_global
 # Disable system sleep (helpful if you're usually plugged into mains power).
 # sudo pmset -a sleep 0
 
+# Tab switcher on all displays
+defaults write com.apple.dock appswitcher-all-displays -bool true
+killall Dock
+
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
