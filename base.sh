@@ -83,6 +83,8 @@ function install
 
     create_shortcuts
 
+    configure_screenshots
+
     fix_file_permissions
 
     display_instructions    

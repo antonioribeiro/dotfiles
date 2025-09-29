@@ -355,6 +355,27 @@ defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-br-corner -int 0
 
 ###############################################################################
+# Menu Bar                                                                    #
+###############################################################################
+
+# SERVICE=Bluetooth
+# SERVICE=Display
+SERVICE="ScreenMirroring"
+MAGIC_NUMBER=18 # enabled
+# MAGIC_NUMBER=24 # disabled
+
+defaults write \
+    ~/Library/Preferences/ByHost/com.apple.controlcenter.plist \
+    "$SERVICE" \
+    -int "$MAGIC_NUMBER"
+
+defaults read \
+    ~/Library/Preferences/ByHost/com.apple.controlcenter.plist \
+    "$SERVICE"
+
+killall SystemUIServer
+
+###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
 

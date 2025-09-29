@@ -358,6 +358,8 @@ function install_laravel_valet()
 
     valet install
 
+    execute_sudo valet trust
+
     check_errors
 }
 
@@ -440,6 +442,9 @@ function configure_git()
     [ "$_FATAL_ERROR" = "YES" ] && return 0
 
     execute git config --global --replace-all user.email "\"$___EMAIL___\""
+
+    ln -s ~/.dotfiles/.gitignore ~/.gitignore
+    ln -s ~/.dotfiles/.gitignore ~/.gitignore_global
 }
 
 
@@ -540,3 +545,11 @@ function install_brew_tap_repositories()
 {
     install_all_packages $_INSTALL_BREW_CASK_PACKAGES "brew tap" ".brew_tap_repositories" brew_tap_install
 }
+
+function configure_screenshots() 
+{
+    mkdir -p ~/Screenshots
+
+    defaults write com.apple.screencapture location ~/Screenshots
+}
+
