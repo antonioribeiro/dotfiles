@@ -1,0 +1,1169 @@
+Found 33 keys in domain 'com.apple.controlcenter': {
+    Battery =     {
+        ShowPercentage = 18;
+    };
+    "LastHeartbeatDateString.daily" = "2025-09-29T07:03:51Z";
+    "NSStatusItem Preferred Position Battery" = 216;
+    "NSStatusItem Preferred Position BentoBox" = 144;
+    "NSStatusItem Preferred Position Bluetooth" = 327;
+    "NSStatusItem Preferred Position Display" = 359;
+    "NSStatusItem Preferred Position FocusModes" = 316;
+    "NSStatusItem Preferred Position NowPlaying" = 356;
+    "NSStatusItem Preferred Position ScreenMirroring" = 308;
+    "NSStatusItem Preferred Position Sound" = 320;
+    "NSStatusItem Preferred Position WiFi" = 178;
+    "NSStatusItem Visible AudioVideoModule" = 1;
+    "NSStatusItem Visible Battery" = 1;
+    "NSStatusItem Visible BentoBox" = 1;
+    "NSStatusItem Visible Bluetooth" = 1;
+    "NSStatusItem Visible Clock" = 1;
+    "NSStatusItem Visible Display" = 0;
+    "NSStatusItem Visible FocusModes" = 0;
+    "NSStatusItem Visible Item-0" = 0;
+    "NSStatusItem Visible Item-1" = 0;
+    "NSStatusItem Visible Item-10" = 0;
+    "NSStatusItem Visible Item-2" = 0;
+    "NSStatusItem Visible Item-3" = 0;
+    "NSStatusItem Visible Item-4" = 0;
+    "NSStatusItem Visible Item-5" = 0;
+    "NSStatusItem Visible Item-6" = 0;
+    "NSStatusItem Visible Item-7" = 0;
+    "NSStatusItem Visible Item-8" = 0;
+    "NSStatusItem Visible Item-9" = 0;
+    "NSStatusItem Visible NowPlaying" = 0;
+    "NSStatusItem Visible ScreenMirroring" = 1;
+    "NSStatusItem Visible Sound" = 1;
+    "NSStatusItem Visible WiFi" = 1;
+}
+Found 1 keys in domain 'com.apple.ncprefs': {
+    apps =     (
+                {
+            "bundle-id" = "com.apple.FaceTime";
+            "content_visibility" = 0;
+            flags = 41951246;
+            grouping = 0;
+            path = "/System/Applications/FaceTime.app";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 56, bytes = 0xfade0c00 00000038 00000001 00000006 ... 74696573 00000003 };
+                    uuid = "2EEFD229-8542-4327-B4D4-E7EF46D105A0";
+                }
+            );
+        },
+                {
+            auth = 791;
+            "bundle-id" = "com.apple.MobileSMS";
+            "content_visibility" = 0;
+            flags = 9521594382;
+            grouping = 0;
+            path = "/System/Applications/Messages.app";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 72, bytes = 0xfade0c00 00000048 00000001 00000006 ... 67656e74 00000003 };
+                    uuid = "6206F5FE-949D-4ED2-A636-8BC561358B27";
+                },
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 74000000 00000003 };
+                    uuid = "D49EA4BD-7CBE-4D1B-8B34-90B304D90248";
+                }
+            );
+            "universal-app-id" = "com.apple.MobileSMS";
+        },
+                {
+            "bundle-id" = "com.apple.mail";
+            "content_visibility" = 0;
+            flags = 268435470;
+            grouping = 0;
+            path = "/System/Applications/Mail.app";
+        },
+                {
+            auth = 263;
+            "bundle-id" = "com.apple.reminders";
+            "content_visibility" = 0;
+            flags = 9395765270;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.reminders.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 64000000 00000003 };
+                    uuid = "495CDE81-573E-4042-AF19-EF9E7FBF2A16";
+                }
+            );
+            "universal-app-id" = "com.apple.Reminders";
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.followup.alert";
+            "content_visibility" = 3;
+            flags = 41943703;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 75706400 00000003 };
+                    uuid = "C8BF2D8D-D6A7-4417-970C-CF980F952582";
+                }
+            );
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.migrationhelper";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.AppleAccount";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 6e746400 00000003 };
+                    uuid = "9189A125-962E-463F-819A-6C84C184C03C";
+                }
+            );
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.accountsd";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.mdmclient";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.TMHelperAgent";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.appstoreagent";
+            "content_visibility" = 3;
+            flags = 41943703;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 74736400 00000003 };
+                    uuid = "7A38848B-BD7E-4650-B1E7-E6F195BD4CBD";
+                }
+            );
+        },
+                {
+            auth = 327;
+            "bundle-id" = "com.apple.gamecenter";
+            "content_visibility" = 3;
+            flags = 7281844230;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.gamecenter.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 44, bytes = 0xfade0c00 0000002c 00000001 00000006 ... 6d656400 00000003 };
+                    uuid = "614075A7-2AC5-49E1-947D-AE98647C39BC";
+                }
+            );
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.askpermissiond";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.BluetoothUIServer";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 56, bytes = 0xfade0c00 00000038 00000001 00000006 ... 76657200 00000003 };
+                    uuid = "265D2949-5E24-43DC-83B8-669ECFCA2D33";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.apple.appleaccount.notifications";
+            "content_visibility" = 0;
+            flags = 8917614734;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.appleaccount.notifications.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 6e746400 00000003 };
+                    uuid = "FB9D3D65-F961-41F1-A817-241FBA4464F1";
+                }
+            );
+        },
+                {
+            auth = 6;
+            "bundle-id" = "com.apple.shortcuts";
+            "content_visibility" = 0;
+            flags = 327680142;
+            grouping = 0;
+            path = "/System/Applications/Shortcuts.app";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 73640000 00000003 };
+                    uuid = "80E43C50-792E-4D28-89E4-681F839FC974";
+                }
+            );
+            "universal-app-id" = "com.apple.shortcuts";
+        },
+                {
+            auth = 71;
+            "bundle-id" = "com.apple.findmy";
+            "content_visibility" = 0;
+            flags = 2449473542;
+            grouping = 0;
+            path = "/System/Applications/FindMy.app";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 68, bytes = 0xfade0c00 00000044 00000001 00000006 ... 74000000 00000003 };
+                    uuid = "8B74D769-B542-4496-8789-F2C03174B52B";
+                }
+            );
+            "universal-app-id" = "com.apple.findmy";
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.sharingd";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 67640000 00000003 };
+                    uuid = "8725A2B0-A82D-416B-87D3-1C4D35C973A4";
+                }
+            );
+        },
+                {
+            auth = 322;
+            "bundle-id" = "com.apple.ScreenTimeNotifications";
+            "content_visibility" = 0;
+            flags = 7281836036;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.ScreenTimeNotifications.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 56, bytes = 0xfade0c00 00000038 00000001 00000006 ... 74000000 00000003 };
+                    uuid = "C8DD313B-8707-485C-A503-AA7065890662";
+                }
+            );
+            "universal-app-id" = "com.apple.ScreenTimeNotifications";
+        },
+                {
+            auth = 6;
+            "bundle-id" = "com.apple.ScreenTimeEnabledNotifications";
+            "content_visibility" = 0;
+            flags = 13212582036;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.ScreenTimeEnabledNotifications.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 56, bytes = 0xfade0c00 00000038 00000001 00000006 ... 74000000 00000003 };
+                    uuid = "7072702D-B2DB-4AC2-B3A6-E30C40E6E726";
+                }
+            );
+            "universal-app-id" = "com.apple.ScreenTimeEnabledNotifications";
+        },
+                {
+            auth = 263;
+            "bundle-id" = "com.apple.iCal";
+            "content_visibility" = 0;
+            flags = 805830678;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.iCal.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 65737364 00000003 };
+                    uuid = "7F677F1B-5CBB-43A2-8DCC-0FC10DBFDC22";
+                }
+            );
+            "universal-app-id" = "com.apple.Calendar";
+        },
+                {
+            auth = 6;
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.wifip2pd.UserNotification";
+            "content_visibility" = 0;
+            flags = 327680662;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 67656e74 00000003 };
+                    uuid = "E6B2641F-02C6-4866-9619-131CBA2DBE88";
+                }
+            );
+        },
+                {
+            auth = 4;
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.wifi.usernotifications.autohotspot";
+            "content_visibility" = 0;
+            flags = 327680662;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 67656e74 00000003 };
+                    uuid = "E639795C-C75B-46F0-A627-4808807D6AB7";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.apple.identityservicesd.firewall";
+            "content_visibility" = 0;
+            flags = 8917614734;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.identityservicesd.firewall.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 56, bytes = 0xfade0c00 00000038 00000001 00000006 ... 65736400 00000003 };
+                    uuid = "26B7A16C-5AE1-47EA-88FB-229ED5CDEE45";
+                }
+            );
+            "universal-app-id" = "com.apple.identityservicesd.firewall";
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.sharingd.continuity";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 67640000 00000003 };
+                    uuid = "61DEB4F8-D4E4-4E7F-831C-9B6407653B4C";
+                }
+            );
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.FaceTime";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 56, bytes = 0xfade0c00 00000038 00000001 00000006 ... 74696573 00000003 };
+                    uuid = "E804DB1D-9EF6-4929-A651-9C2FA4754DD1";
+                }
+            );
+        },
+                {
+            auth = 327;
+            "bundle-id" = "com.apple.Home";
+            "content_visibility" = 0;
+            flags = 2986868742;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.Home.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 64000000 00000003 };
+                    uuid = "4655E2CF-D23B-4E4E-8ED0-71A48F2F4D06";
+                },
+                                {
+                    flags = 6;
+                    req = {length = 44, bytes = 0xfade0c00 0000002c 00000001 00000006 ... 6d656400 00000003 };
+                    uuid = "0D82E637-1BEB-4D90-A43D-3E44267AD923";
+                }
+            );
+            "universal-app-id" = "com.apple.Home";
+        },
+                {
+            auth = 4;
+            "bundle-id" = "com.apple.Siri.ActionPredictionNotifications";
+            "content_visibility" = 0;
+            flags = 327680130;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.Siri.ActionPredictionNotifications.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 64000000 00000003 };
+                    uuid = "DAC4B34F-C53A-4A95-BB40-3BCDFD53D3BB";
+                }
+            );
+        },
+                {
+            auth = 4;
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.wifi.usernotifications.diagnostics";
+            "content_visibility" = 0;
+            flags = 327680662;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 67656e74 00000003 };
+                    uuid = "6D112D77-5949-40F0-8784-F61C612B1EC7";
+                }
+            );
+        },
+                {
+            auth = 4;
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.wifi.usernotifications.join";
+            "content_visibility" = 0;
+            flags = 327680662;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 67656e74 00000003 };
+                    uuid = "4BB0F95B-CC91-48AD-92E0-4C2B86EBC915";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.apple.mdmclient.usernotifications.v2";
+            "content_visibility" = 3;
+            flags = 8917622934;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.mdmclient.usernotifications.v2.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 656e7400 00000003 };
+                    uuid = "0636D5AB-8D1A-4C1D-8BB4-D2D85DA9D1C8";
+                }
+            );
+        },
+                {
+            auth = 6;
+            "bundle-id" = "com.apple.BTUserNotifications";
+            "content_visibility" = 3;
+            flags = 327688342;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.BTUserNotifications.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 61697264 00000003 };
+                    uuid = "CAFD0705-01BF-4EC2-97A9-F588CECD0FCA";
+                }
+            );
+        },
+                {
+            auth = 0;
+            "bundle-id" = "com.apple.Photos";
+            "content_visibility" = 0;
+            flags = 268443662;
+            grouping = 0;
+            path = "/System/Applications/Photos.app";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 72796400 00000003 };
+                    uuid = "ED7D7963-B323-48DD-A3BF-D54556C38795";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.apple.controlcenter.notifications.low-battery";
+            "content_visibility" = 3;
+            flags = 327688342;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.controlcenter.notifications.low-battery.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 74657200 00000003 };
+                    uuid = "0100A368-AF47-43BB-AF4D-668E85277397";
+                }
+            );
+        },
+                {
+            auth = 6;
+            "bundle-id" = "com.apple.clock";
+            "content_visibility" = 3;
+            flags = 8917622934;
+            grouping = 0;
+            path = "/System/Applications/Clock.app";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 72640000 00000003 };
+                    uuid = "E4548F13-BF7A-4AA1-9148-B1D9D52303D6";
+                }
+            );
+            "universal-app-id" = "com.apple.clock";
+        },
+                {
+            auth = 4;
+            "bundle-id" = "com.apple.ReplayKitNotifications";
+            "content_visibility" = 3;
+            flags = 327688334;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.ReplayKitNotifications.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 64000000 00000003 };
+                    uuid = "16A7EA79-D7FA-4195-A4DB-E0EDEF27B989";
+                }
+            );
+        },
+                {
+            auth = 4;
+            "bundle-id" = "com.apple.BTMNotificationAgent";
+            "content_visibility" = 0;
+            flags = 327680150;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.BTMNotificationAgent.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 68, bytes = 0xfade0c00 00000044 00000001 00000006 ... 67656e74 00000003 };
+                    uuid = "19953632-F906-491B-B30C-A4A7A83857AC";
+                }
+            );
+        },
+                {
+            auth = 327;
+            "bundle-id" = "com.apple.Passbook";
+            "content_visibility" = 0;
+            flags = 2986868742;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.Passbook.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 656e7464 00000003 };
+                    uuid = "BCCF58EB-86AD-4633-B6C1-6F61FC29974C";
+                },
+                                {
+                    flags = 6;
+                    req = {length = 44, bytes = 0xfade0c00 0000002c 00000001 00000006 ... 73736400 00000003 };
+                    uuid = "9C8ABF99-537C-4DE0-BE7C-13B733A5243C";
+                }
+            );
+            "universal-app-id" = "com.apple.Passbook";
+        },
+                {
+            auth = 271;
+            "bundle-id" = "com.apple.AppStore";
+            "content_visibility" = 0;
+            flags = 9404153874;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.AppStore.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 656e7464 00000003 };
+                    uuid = "0836BD11-820E-4557-95E8-423F8EDC352F";
+                },
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 656e7400 00000003 };
+                    uuid = "45C30089-0377-4D22-B26F-65AAA5211379";
+                }
+            );
+        },
+                {
+            auth = 6;
+            "bundle-id" = "com.apple.voicebanking.usernotifications";
+            "content_visibility" = 0;
+            flags = 268959756;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.voicebanking.usernotifications.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 6e676400 00000003 };
+                    uuid = "BF7ECBA4-0107-4FC6-A00C-00593488570F";
+                }
+            );
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.MobileAccessoryUpdater.fudHelperAgent";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 67656e74 00000003 };
+                    uuid = "2DC4CA4A-D890-42FD-A27C-2FA40D0E4E97";
+                }
+            );
+        },
+                {
+            auth = 263;
+            "bundle-id" = "com.apple.askpermission.notifications";
+            "content_visibility" = 0;
+            flags = 864551062;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.askpermission.notifications.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 696f6e64 00000003 };
+                    uuid = "8BF6A77F-893F-40B5-BF9F-A4722E49D4A8";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.SoftwareUpdateNotification";
+            "content_visibility" = 3;
+            flags = 327688855;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 72, bytes = 0xfade0c00 00000048 00000001 00000006 ... 67657200 00000003 };
+                    uuid = "02B5A24A-2E9D-42CC-82F3-8EAEBB99FCC2";
+                }
+            );
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.security.keychain-circle-notification";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 76, bytes = 0xfade0c00 0000004c 00000001 00000006 ... 696f6e00 00000003 };
+                    uuid = "CEE33797-5357-4DF8-8878-71D7DA3A73E7";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.apple.AppSSOKerberos.notifications";
+            "content_visibility" = 3;
+            flags = 327163926;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.AppSSOKerberos.notifications.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 74000000 00000003 };
+                    uuid = "08A2EF9A-B7A2-4A5D-8297-CA65FBF8EB88";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.apple.PlatformSSO.notifications";
+            "content_visibility" = 3;
+            flags = 327688342;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.PlatformSSO.notifications.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 74000000 00000003 };
+                    uuid = "C9BD94DE-4700-4F2A-8A03-C615E36CDD8C";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.apple.ManagedClient.PasscodeUserNotification2";
+            "content_visibility" = 3;
+            flags = 8917622926;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.ManagedClient.PasscodeUserNotification2.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 56, bytes = 0xfade0c00 00000038 00000001 00000006 ... 67656e74 00000003 };
+                    uuid = "89C24F46-B4ED-4C7B-A21D-5FB9A0F479FC";
+                }
+            );
+        },
+                {
+            auth = 4;
+            "bundle-id" = "com.apple.tips";
+            "content_visibility" = 0;
+            flags = 327680022;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.tips.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 44, bytes = 0xfade0c00 0000002c 00000001 00000006 ... 70736400 00000003 };
+                    uuid = "9BB7BFC5-9C86-4886-87F7-672D0EE87FEF";
+                }
+            );
+        },
+                {
+            auth = 6;
+            "bundle-id" = "com.apple.studentd.notifications";
+            "content_visibility" = 3;
+            flags = 327688342;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.studentd.notifications.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 74640000 00000003 };
+                    uuid = "EED9A051-91E1-4BC8-B66E-131C33BCD64D";
+                }
+            );
+        },
+                {
+            "bundle-id" = "com.apple.weather";
+            "content_visibility" = 0;
+            flags = 268443662;
+            grouping = 0;
+            path = "/System/Applications/Weather.app";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 72640000 00000003 };
+                    uuid = "E01A18E0-40B2-450E-B4BE-786138426DB5";
+                }
+            );
+            "universal-app-id" = "com.apple.weather";
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.apple.TimeZoneUpdates.tznotify";
+            "content_visibility" = 3;
+            flags = 8917622934;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.TimeZoneUpdates.tznotify.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 64, bytes = 0xfade0c00 00000040 00000001 00000006 ... 66790000 00000003 };
+                    uuid = "2FC6381D-2F69-42B6-BF29-4EF3A4929D95";
+                }
+            );
+        },
+                {
+            auth = 0;
+            "bundle-id" = "com.apple.TV";
+            "content_visibility" = 0;
+            flags = 268443662;
+            grouping = 0;
+            path = "/System/Applications/TV.app";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 64, bytes = 0xfade0c00 00000040 00000001 00000006 ... 74000000 00000003 };
+                    uuid = "82EBE39C-799D-45AD-BD04-2EA7B54E7CD8";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.apple.universalcontrol.notifications.displays-preferences";
+            "content_visibility" = 3;
+            flags = 327688335;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.universalcontrol.notifications.displays-preferences.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 56, bytes = 0xfade0c00 00000038 00000001 00000006 ... 6f6c0000 00000003 };
+                    uuid = "F52A1188-50B3-443B-88F5-4B3F4A56C779";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.apple.cmio.ContinuityCamera.notifications";
+            "content_visibility" = 0;
+            flags = 327680150;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.cmio.ContinuityCamera.notifications.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 68, bytes = 0xfade0c00 00000044 00000001 00000006 ... 74000000 00000003 };
+                    uuid = "6F576444-153E-4270-B956-AF9D71446C17";
+                }
+            );
+        },
+                {
+            auth = 0;
+            "bundle-id" = "com.apple.Passwords";
+            "content_visibility" = 0;
+            flags = 268443662;
+            grouping = 0;
+            path = "/System/Applications/Passwords.app";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 92, bytes = 0xfade0c00 0000005c 00000001 00000006 ... 67656e74 00000003 };
+                    uuid = "8C85F778-00A1-4FE8-BE0D-918B66EF3C42";
+                }
+            );
+        },
+                {
+            auth = 0;
+            "bundle-id" = "company.thebrowser.Browser";
+            "content_visibility" = 0;
+            flags = 268443662;
+            grouping = 0;
+            path = "/Applications/Arc.app";
+            push =             {
+                env = production;
+                token = {length = 32, bytes = 0x8808f349 c9af21bd ebfc728b b0924a70 ... 2cefb13b 8e4ff5f4 };
+                topic = "company.thebrowser.Browser";
+                types = 9223372036854775808;
+            };
+            src =             (
+                                {
+                    flags = 16;
+                    uuid = "F1E28E86-698F-4654-A93F-14303603590C";
+                },
+                                {
+                    flags = 0;
+                    path = "/Applications/Arc.app";
+                    req = {length = 200, bytes = 0xfade0c00 000000c8 00000001 00000006 ... 38325938 33470000 };
+                    uuid = "282B65AB-E963-4171-9D87-F23E91006233";
+                }
+            );
+        },
+                {
+            "bundle-id" = "com.apple.Siri";
+            "content_visibility" = 0;
+            flags = 268443790;
+            grouping = 0;
+            path = "/System/Library/CoreServices/Siri.app";
+            src =             (
+                                {
+                    flags = 2;
+                    path = "/System/Library/CoreServices/Siri.app";
+                    req = {length = 44, bytes = 0xfade0c00 0000002c 00000001 00000006 ... 72690000 00000003 };
+                    uuid = "0753B160-6FCC-4F31-9D89-C9DE4ECF0A43";
+                }
+            );
+        },
+                {
+            auth = 6;
+            "bundle-id" = "com.apple.Maps";
+            "content_visibility" = 0;
+            flags = 271056910;
+            grouping = 0;
+            path = "/System/Applications/Maps.app";
+        },
+                {
+            auth = 0;
+            "bundle-id" = "com.googlecode.iterm2";
+            "content_visibility" = 0;
+            flags = 268443662;
+            grouping = 0;
+            path = "/Applications/iTerm.app";
+            src =             (
+                                {
+                    flags = 0;
+                    path = "/Applications/iTerm.app";
+                    req = {length = 196, bytes = 0xfade0c00 000000c4 00000001 00000006 ... 58595651 37440000 };
+                    uuid = "C3B51557-92D0-49A4-A936-B4AFDCB13F28";
+                }
+            );
+        },
+                {
+            auth = 0;
+            "bundle-id" = "com.apple.Music";
+            "content_visibility" = 0;
+            flags = 268443662;
+            grouping = 0;
+            path = "/System/Applications/Music.app";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 656e7464 00000003 };
+                    uuid = "DF0A6FDE-03CF-497D-9736-BF711B45AE5B";
+                }
+            );
+        },
+                {
+            auth = 4;
+            "bundle-id" = "com.apple.podcasts";
+            "content_visibility" = 0;
+            flags = 268435470;
+            grouping = 0;
+            path = "/System/Applications/Podcasts.app";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 656e7464 00000003 };
+                    uuid = "E1363885-BEF8-466F-94E1-A76A56F68DF3";
+                }
+            );
+            "universal-app-id" = "com.apple.podcasts";
+        },
+                {
+            auth = 7;
+            "bundle-id" = "ru.keepcoder.Telegram";
+            "content_visibility" = 0;
+            flags = 276832270;
+            grouping = 0;
+            path = "/Applications/Telegram.app";
+            src =             (
+                                {
+                    flags = 0;
+                    path = "/Applications/Telegram.app";
+                    req = {length = 204, bytes = 0xfade0c00 000000cc 00000001 00000006 ... 65677261 6d000000 };
+                    uuid = "CD981C14-9FDA-4153-8815-9D4580081BCA";
+                }
+            );
+        },
+                {
+            auth = 0;
+            "bundle-id" = "com.apple.appleseed.FeedbackAssistant";
+            "content_visibility" = 0;
+            flags = 268443662;
+            grouping = 0;
+            path = "/System/Library/CoreServices/Applications/Feedback Assistant.app";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 636b6400 00000003 };
+                    uuid = "D3FE9CF4-BD13-4CF0-B0A3-29351261C78E";
+                }
+            );
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.EscrowSecurityAlert";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 60, bytes = 0xfade0c00 0000003c 00000001 00000006 ... 74000000 00000003 };
+                    uuid = "CDE63C69-3078-47E0-9BE7-F01769CB274F";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.apple.controlcenter.notifications.focus";
+            "content_visibility" = 3;
+            flags = 327688335;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.controlcenter.notifications.focus.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 74657200 00000003 };
+                    uuid = "C5B9593A-8876-4A2A-87D4-9060824F39C6";
+                }
+            );
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.USBAgent";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 6e740000 00000003 };
+                    uuid = "F889109D-1023-4B09-A360-4329E74CF413";
+                }
+            );
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.loginwindow";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 52, bytes = 0xfade0c00 00000034 00000001 00000006 ... 77000000 00000003 };
+                    uuid = "FA448C77-BB0E-4BB8-806E-261AF4BC84C3";
+                }
+            );
+        },
+                {
+            auth = 0;
+            "bundle-id" = "com.toggl.daneel";
+            "content_visibility" = 0;
+            flags = 268443662;
+            grouping = 0;
+            path = "/Applications/Toggl Track.app";
+            push =             {
+                env = production;
+                token = {length = 32, bytes = 0x2aa071a8 bfa83a05 86c6e92b 56fe0cd5 ... de8feba0 999f1e4d };
+                topic = "com.toggl.daneel";
+                types = 0;
+            };
+            src =             (
+                                {
+                    flags = 16;
+                    uuid = "D08A3323-C780-467F-A3C9-0CDBEF9C54C7";
+                },
+                                {
+                    flags = 0;
+                    path = "/Applications/Toggl Track.app";
+                    req = {length = 196, bytes = 0xfade0c00 000000c4 00000001 00000006 ... 6c2e6461 6e65656c };
+                    uuid = "7A886DD2-ECDF-481F-AED5-FD382C7F6760";
+                }
+            );
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.noticeboard";
+            "content_visibility" = 3;
+            flags = 41943703;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 74000000 00000003 };
+                    uuid = "F243A51D-A248-499A-BD06-35AEDABC1595";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.tinyspeck.slackmacgap";
+            "content_visibility" = 0;
+            flags = 8396814;
+            grouping = 0;
+            path = "/Applications/Slack.app";
+            src =             (
+                                {
+                    flags = 0;
+                    path = "/Applications/Slack.app";
+                    req = {length = 208, bytes = 0xfade0c00 000000d0 00000001 00000006 ... 61636761 70000000 };
+                    uuid = "760F663B-844F-43B9-B3DB-00DFCD8324D5";
+                }
+            );
+        },
+                {
+            "bundle-id" = "_SYSTEM_CENTER_:com.apple.DiskArbitration.DiskArbitrationAgent";
+            "content_visibility" = 3;
+            flags = 41943575;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 60, bytes = 0xfade0c00 0000003c 00000001 00000006 ... 6e740000 00000003 };
+                    uuid = "FE77618F-2F42-4697-BF81-5FC0772EF24E";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.cisco.secureclient.gui";
+            "content_visibility" = 0;
+            flags = 276832270;
+            grouping = 0;
+            path = "/Applications/Cisco/Cisco Secure Client.app";
+            src =             (
+                                {
+                    flags = 0;
+                    path = "/Applications/Cisco/Cisco Secure Client.app";
+                    req = {length = 200, bytes = 0xfade0c00 000000c8 00000001 00000006 ... 39364b39 51500000 };
+                    uuid = "7F76B704-0B35-4BF0-AA17-F39794784A3F";
+                }
+            );
+        },
+                {
+            auth = 4;
+            "bundle-id" = "com.nicoverbruggen.phpmon";
+            "content_visibility" = 0;
+            flags = 276832270;
+            grouping = 0;
+            path = "/Applications/PHP Monitor 2.app";
+            src =             (
+                                {
+                    flags = 0;
+                    path = "/private/var/folders/f2/4f42kgh15pj5n31w3z5010pr0000gn/T/AppTranslocation/8C7FC8FA-AAAB-4DD8-818E-5BBEACA45887/d/PHP Monitor.app";
+                    req = {length = 200, bytes = 0xfade0c00 000000c8 00000001 00000006 ... 4a354a37 38370000 };
+                    uuid = "E6725526-3FFA-4D8F-96C1-A0AB20AC8317";
+                }
+            );
+        },
+                {
+            auth = 4;
+            "bundle-id" = "com.apple.tccd";
+            "content_visibility" = 0;
+            flags = 327680150;
+            grouping = 0;
+            path = "/System/Library/UserNotifications/Bundles/com.apple.tccd.bundle";
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 44, bytes = 0xfade0c00 0000002c 00000001 00000006 ... 63640000 00000003 };
+                    uuid = "BE746528-6F49-4735-AF38-C1529336D7F7";
+                }
+            );
+        },
+                {
+            "bundle-id" = "com.apple.TelephonyUtilities";
+            "content_visibility" = 0;
+            flags = 8206;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 48, bytes = 0xfade0c00 00000030 00000001 00000006 ... 74000000 00000003 };
+                    uuid = "083F71C4-2895-40D6-9834-DC8AA9B693CA";
+                }
+            );
+        },
+                {
+            "bundle-id" = "com.apple.iChat";
+            "content_visibility" = 0;
+            flags = 41943054;
+            grouping = 0;
+            src =             (
+                                {
+                    flags = 6;
+                    req = {length = 56, bytes = 0xfade0c00 00000038 00000001 00000006 ... 65736400 00000003 };
+                    uuid = "62FA7B55-01BF-4FB1-8FB8-9F268D5859CC";
+                }
+            );
+        },
+                {
+            auth = 7;
+            "bundle-id" = "com.mosyle.macos.manager.notification";
+            "content_visibility" = 0;
+            flags = 310386702;
+            grouping = 0;
+            path = "/Library/Application Support/Mosyle/Mosyle.app";
+            src =             (
+                                {
+                    flags = 0;
+                    path = "/Library/Application Support/Mosyle/Mosyle.app";
+                    req = {length = 180, bytes = 0xfade0c00 000000b4 00000001 00000006 ... 59475254 50540000 };
+                    uuid = "677B402C-B48B-40DC-8AA5-A7C2118D5275";
+                }
+            );
+        }
+    );
+}
+Found 1 keys in domain 'com.apple.proactive.PersonalizationPortrait': {
+    "BundleIdRedactor.seenBundleIds" =     (
+        "com.apple.controlcenter.notifications.focus",
+        "com.apple.BTUserNotifications",
+        "_SYSTEM_CENTER_:com.apple.SoftwareUpdateNotification",
+        "com.tinyspeck.slackmacgap",
+        "com.toggl.daneel",
+        "com.apple.BTMNotificationAgent",
+        "company.thebrowser.Browser"
+    );
+}

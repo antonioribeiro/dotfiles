@@ -361,17 +361,32 @@ defaults write com.apple.dock wvous-br-corner -int 0
 # SERVICE=Bluetooth
 # SERVICE=Display
 SERVICE="ScreenMirroring"
-MAGIC_NUMBER=18 # enabled
+# MAGIC_NUMBER=18 # enabled
 # MAGIC_NUMBER=24 # disabled
+MENU_VISIBLE=18
+MENU_NOT_VISBLE=24
 
-defaults write \
-    ~/Library/Preferences/ByHost/com.apple.controlcenter.plist \
-    "$SERVICE" \
-    -int "$MAGIC_NUMBER"
+# defaults write \
+#     ~/Library/Preferences/ByHost/com.apple.controlcenter.plist \
+#     "$SERVICE" \
+#     -int "$MAGIC_NUMBER"
 
-defaults read \
-    ~/Library/Preferences/ByHost/com.apple.controlcenter.plist \
-    "$SERVICE"
+# defaults read \
+#     ~/Library/Preferences/ByHost/com.apple.controlcenter.plist \
+#     "$SERVICE"
+
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist "Bluetooth" -int "$MENU_VISIBLE"
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist "ScreenMirroring" -int "$MENU_VISIBLE"
+
+# defaults delete ~/Library/Preferences/ByHost/com.apple.controlcenter.plist "Battery"
+
+defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
+defaults -currentHost write com.apple.controlcenter Spotlight -bool false
+
+defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1 ## disable
+defaults -currentHost write com.apple.Siri MenuItemHidden -int 1 ## disable
+#defaults -currentHost write com.apple.Siri MenuItemHidden -int 0
+defaults -currentHost write com.apple.Siri MenuVisible false
 
 killall SystemUIServer
 

@@ -112,7 +112,9 @@ screen
 shivammathur/extensions/imagick@8.2
 shivammathur/extensions/imagick@8.3
 shivammathur/extensions/imagick@8.4
+shivammathur/extensions/redis@8.2
 shivammathur/extensions/redis@8.3
+shivammathur/extensions/redis@8.4
 shivammathur/extensions/xdebug@8.3
 shivammathur/extensions/xdebug@8.4
 shivammathur/php/php@7.4
