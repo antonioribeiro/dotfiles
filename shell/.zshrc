@@ -4,7 +4,6 @@ echo "Loading .zhrc..."
 
 source $HOME/.dotfiles/environment.defaults.sh
 source $HOME/.dotfiles/environment.sh
-echo loading exports from $HOME/.dotfiles/shell/.exports...
 source $HOME/.dotfiles/shell/.exports
 
 ZSH=$HOME/.oh-my-zsh
