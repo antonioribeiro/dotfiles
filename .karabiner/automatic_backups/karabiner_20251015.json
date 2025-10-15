@@ -129,40 +129,69 @@
                         "description": "Open PHPStorm with cmd+shift+p, except in Sublime Text",
                         "manipulators": [
                             {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": ["command", "shift"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'PhpStorm'"
+                                    }
+                                ],
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.sublimetext\\.3$",
                                             "^com\\.sublimetext\\.4$",
                                             "^com\\.sublimetext\\.text$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
-                                ],
-                                "from": {
-                                    "key_code": "p",
-                                    "modifiers": { "mandatory": ["command", "shift"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'PhpStorm'" }],
-                                "type": "basic"
+                                ]
                             }
                         ]
                     },
                     {
-                        "description": "Disable command+q (great when you only use it on accident time to time)",
+                        "description": "Lock screen with cmd+shift+q",
                         "manipulators": [
                             {
+                                "type": "basic",
                                 "from": {
                                     "key_code": "q",
                                     "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["any"]
+                                        "mandatory": ["command", "shift"]
                                     }
                                 },
-                                "to": [{ "key_code": "vk_none" }],
-                                "type": "basic"
+                                "to": [
+                                    {
+                                        "shell_command": "/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+                                    }
+                                ]
                             }
                         ]
+                    },
+                    {
+                      "description": "Disable command+q (great when you only use it on accident time to time)",
+                      "manipulators": [
+                        {
+                          "type": "basic",
+                          "from": {
+                            "key_code": "q",
+                            "modifiers": {
+                              "optional": ["any"],
+                              "mandatory": ["command"]
+                            }
+                          },
+                          "to": [
+                            {
+                              "key_code": "vk_none"
+                            }
+                          ]
+                        }
+                      ]
                     }
                 ]
             },
