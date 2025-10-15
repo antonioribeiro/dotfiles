@@ -138,3 +138,10 @@ unset __conda_setup
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
+# GPG Agent configuration
+if [ -f ~/.gnupg/gpg-agent.conf ]; then
+    export GPG_TTY=$(tty)
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    gpgconf --launch gpg-agent
+fi

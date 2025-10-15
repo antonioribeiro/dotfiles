@@ -126,6 +126,35 @@
                         ]
                     },
                     {
+                        "description": "Open PHPStorm with cmd+shift+p, except in Sublime Text",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": ["command", "shift"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'PhpStorm'"
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_unless",
+                                        "bundle_identifiers": [
+                                            "^com\\.sublimetext\\.3$",
+                                            "^com\\.sublimetext\\.4$",
+                                            "^com\\.sublimetext\\.text$"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                       "description": "Disable command+q (great when you only use it on accident time to time)",
                       "manipulators": [
                         {
