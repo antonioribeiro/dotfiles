@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/antonioribeiro/code/rockwell-group/rockwell-group-website/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

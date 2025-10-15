@@ -48,6 +48,7 @@ error.txt
 error.log
 _azure.sh
 .env.dev
+.env.global
 transactions-export.csv
 users-export.csv
 users-report.csv
